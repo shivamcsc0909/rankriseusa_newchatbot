@@ -4,15 +4,15 @@ import { Phone, Mail, MapPin, MessageCircle, Star, Clock, Users, CheckCircle, Gl
 import { Button } from '@/components/ui/button';
 
 export default function ContactPage() {
-  const whatsappLink = "https://wa.me/919278074403";
-  const phoneNumber1 = "+91 92780 74403";
+  const whatsappLink = "https://wa.me/917565031848";
+  const phoneNumber1 = "+91 75650 31848";
   const phoneNumber2 = "+91 77040 74403";
   const emails = [
-    "info@rankriseusa.com",
+    "sid.rankriseusa@gmail.com",
     "hr@rankriseusa.com", 
     "support@rankriseusa.com"
   ];
-  const address = "Amarpali Leisure Park, B4 Flat 805, Greater Noida, Uttar Pradesh 201310";
+  const address = "Address available soon....";
 
   const quickActions = [
     { 
@@ -64,7 +64,7 @@ export default function ContactPage() {
       country: "United States",
       status: "coming",
       flag: "🇺🇸",
-      address: "Coming Soon - 2025",
+      address: "Coming Soon - 2026",
       features: ["Digital Marketing", "AI Automation", "Enterprise Solutions"],
       gradient: "from-blue-500 to-cyan-500"
     },
@@ -72,7 +72,7 @@ export default function ContactPage() {
       country: "United Kingdom", 
       status: "coming",
       flag: "🇬🇧",
-      address: "Coming Soon - 2025",
+      address: "Coming Soon - 2026",
       features: ["SEO Services", "Web Development", "Growth Marketing"],
       gradient: "from-red-500 to-pink-500"
     },
@@ -80,7 +80,7 @@ export default function ContactPage() {
       country: "United Arab Emirates",
       status: "coming", 
       flag: "🇦🇪",
-      address: "Coming Soon - 2025",
+      address: "Coming Soon - 2026",
       features: ["Digital Transformation", "E-commerce Solutions", "Market Entry"],
       gradient: "from-orange-500 to-yellow-500"
     },
@@ -88,7 +88,7 @@ export default function ContactPage() {
       country: "Australia",
       status: "coming", 
       flag: "🇦🇺",
-      address: "Coming Soon - 2025",
+      address: "Coming Soon - 2026",
       features: ["Digital Strategy", "Web Development", "Local SEO"],
       gradient: "from-purple-500 to-indigo-500"
     },
@@ -96,7 +96,7 @@ export default function ContactPage() {
       country: "Canada",
       status: "coming", 
       flag: "🇨🇦",
-      address: "Coming Soon - 2025",
+      address: "Coming Soon - 2026",
       features: ["AI Solutions", "Web Development", "Digital Marketing"],
       gradient: "from-red-500 to-orange-500"
     }
@@ -595,7 +595,7 @@ export default function ContactPage() {
           >
             <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-800 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full mb-3 sm:mb-4">
               <Globe className="w-4 h-4" />
-              <span className="text-xs sm:text-sm font-semibold">Global Expansion 2025</span>
+              <span className="text-xs sm:text-sm font-semibold">Global Expansion 2026</span>
             </div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">
               International <span className="text-gradient">Branches Coming Soon</span>
@@ -616,7 +616,7 @@ export default function ContactPage() {
                 className="bg-card rounded-xl sm:rounded-2xl shadow-lg p-5 sm:p-6 border border-border relative overflow-hidden group hover:shadow-xl transition-all duration-500 h-full flex flex-col"
               >
                 <div className="absolute top-3 sm:top-4 right-3 sm:right-4 bg-orange-500 text-white px-2.5 sm:px-3 py-1 rounded-full text-xs font-semibold">
-                  2025
+                  2026
                 </div>
                 
                 <div className={`bg-gradient-to-r ${office.gradient} rounded-lg sm:rounded-xl p-3 sm:p-4 mb-3 sm:mb-4 text-white`}>
@@ -671,7 +671,7 @@ export default function ContactPage() {
               <div className="w-14 h-14 sm:w-16 sm:h-16 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
                 <Globe className="w-7 h-7 sm:w-8 sm:h-8 text-blue-500" />
               </div>
-              <h3 className="font-bold text-lg sm:text-xl mb-2 sm:mb-3">Global Expansion 2025</h3>
+              <h3 className="font-bold text-lg sm:text-xl mb-2 sm:mb-3">Global Expansion 2026</h3>
               <p className="text-muted-foreground text-sm mb-5 sm:mb-6 max-w-xl mx-auto">
                 Expanding to 5 international locations. Be first to know when we launch.
               </p>

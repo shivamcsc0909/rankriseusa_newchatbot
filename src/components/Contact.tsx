@@ -29,14 +29,14 @@ export default function Contact() {
     { 
       icon: Mail, 
       label: 'Email Us', 
-      value: 'hello@rankrise.com',
+      value: 'sid.rankriseusa@gmail.com',
       subtext: 'Get a response within 24 hours',
       color: 'from-blue-500 to-cyan-500' 
     },
     { 
       icon: Phone, 
       label: 'Call Us', 
-      value: '+1 (555) 123-4567',
+      value: '+917565031848',
       subtext: 'Mon-Fri, 9AM-6PM EST',
       color: 'from-purple-500 to-pink-500' 
     },

@@ -67,15 +67,15 @@ export default function Footer() {
     { name: 'Disclaimer', path: '/disclaimer' },
   ];
 
-  const address = "Amarpali Leisure Park B4 Flat 805, Greater Noida";
+  const address = "Address coming soon...";
   const mobileNumbers = [
-    { number: "+91 9278 074 403", whatsapp: "919278074403" },
+    { number: "+91 7565031848", whatsapp: "917565031848" },
     { number: "+91 7704 074 403", whatsapp: "917704074403" }
   ];
 
   const emailAddresses = [
     { email: "hr@rankriseusa.com", label: "HR Department" },
-    { email: "info@rankriseusa.com", label: "General Inquiries" }
+    { email: "sid.rankriseusa@gmail.com", label: "General Inquiries" }
   ];
   
   const mapEmbedUrl = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3507.060173769528!2d77.49818857526816!3d28.47447587575122!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce826aafbd3c9%3A0x5e9373f4e7d8d2f7!2sAmarpali%20Leisure%20Park%2C%20Greater%20Noida%2C%20Uttar%20Pradesh%20201310!5e0!3m2!1sen!2sin!4v1699623456789!5m2!1sen!2sin`;
@@ -339,7 +339,7 @@ export default function Footer() {
           {/* Copyright */}
           <div className="flex flex-wrap items-center justify-center md:justify-start gap-x-2 gap-y-1 text-gray-400 text-xs text-center md:text-left">
             <div className="flex items-center gap-1">
-              <span>© 2025 Rankrise USA.</span>
+              <span>© 2026 Rankrise USA.</span>
               <motion.span
                 animate={{ scale: [1, 1.2, 1] }}
                 transition={{ duration: 1.5, repeat: Infinity }}
@@ -350,6 +350,19 @@ export default function Footer() {
             <span className="hidden md:inline">|</span>
             <span>Transforming businesses with cutting-edge solutions</span>
           </div>
+           <span className="hidden md:inline">|</span>
+            <span className="mr-1">Designed &amp; developed by</span>
+            <a
+      href="https://shivam-portfolio-pandey.netlify.app/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="font-medium underline hover:text-white transition-colors"
+      aria-label="Open Shivam Pandey portfolio in a new tab"
+    >
+      Shivam Pandey
+    </a>
+         
+          
           
           {/* Legal Links */}
           <div className="flex flex-wrap justify-center gap-x-3 gap-y-1">
