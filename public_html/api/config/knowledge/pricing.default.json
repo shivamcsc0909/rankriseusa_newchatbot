@@ -1,0 +1,36 @@
+[
+  {
+    "id": "pricing-overview",
+    "title": "Pricing Overview",
+    "keywords": ["pricing", "price", "cost", "how much", "packages", "plans", "quote", "fees", "charges"],
+    "tags": ["pricing"],
+    "is_active": true,
+    "content": "Pricing depends on service and scope. Popular categories:\n\n• SEO packages: BASIC → MASTER (monthly)\n• SMO: Starter $200 / Professional $300 / Enterprise $400 per month\n• ORM: Basic $300 / Pro $600 / Enterprise $1000 per month\n• Web Dev: Essential → Enterprise (project-based)\n• Hosting: Shared $10 / VPS $50 / Dedicated $200 per month\n• Security & Maintenance: $100–$500 per month\n\nView full packages at /pricing or request a custom quote: sam@RankRiseUSA.com | +1 (202) 888-2806"
+  },
+  {
+    "id": "pricing-seo-basic",
+    "title": "SEO BASIC Package",
+    "name": "SEO BASIC",
+    "keywords": ["seo basic", "basic seo", "cheapest seo"],
+    "tags": ["pricing", "seo"],
+    "monthlyPrice": null,
+    "is_active": true,
+    "content": "SEO BASIC is our entry SEO package for growing sites that need foundational keyword targeting, on-page improvements, and monthly reporting. Exact quote depends on niche competition — ask for a custom SEO proposal."
+  },
+  {
+    "id": "pricing-smo",
+    "title": "SMO Pricing",
+    "keywords": ["smo", "social media", "social media marketing", "smo price"],
+    "tags": ["pricing", "smo"],
+    "is_active": true,
+    "content": "SMO monthly packages:\n• Starter SMO — $200/mo\n• Professional SMO — $300/mo (popular)\n• Enterprise SMO — $400/mo\n\nIncludes content scheduling, engagement, and reporting. Ad spend is extra if running paid social."
+  },
+  {
+    "id": "pricing-web",
+    "title": "Web Development Pricing",
+    "keywords": ["website cost", "web development price", "web essential", "web enterprise"],
+    "tags": ["pricing", "web"],
+    "is_active": true,
+    "content": "Web development packages: Web Essential, Web Advanced, Web Professional, and Web Enterprise. Pricing varies by pages, design, ecommerce, and integrations. Share your requirements for a fixed project quote."
+  }
+]

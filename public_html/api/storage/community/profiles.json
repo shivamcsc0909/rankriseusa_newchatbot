@@ -1,0 +1,17 @@
+[
+    {
+        "id": "c2765a54-8ab7-4805-8fbc-5688f181676d",
+        "name": "Test User",
+        "email": "test@example.com",
+        "company": "Test Company",
+        "website": "https://test.com",
+        "industry": "Tech",
+        "country": "USA",
+        "phone": "+1 555-555-5555",
+        "profile_image": "https://example.com/avatar.jpg",
+        "bio": "This is a test bio.",
+        "status": "approved",
+        "created_at": "2026-07-25T05:25:21+00:00",
+        "updated_at": "2026-07-25T05:25:21+00:00"
+    }
+]

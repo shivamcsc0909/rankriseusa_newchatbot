@@ -1,0 +1,32 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /admin/
+Disallow: /api/private/
+
+# AI Search Engine & LLM Crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: GoogleOther
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+# Sitemaps
+Sitemap: https://rankriseusa.com/sitemap.xml
+Sitemap: https://rankriseusa.com/sitemap_index.xml
+Sitemap: https://rankriseusa.com/page-sitemap.xml
+Sitemap: https://rankriseusa.com/service-sitemap.xml
+Sitemap: https://rankriseusa.com/blog-sitemap.xml
+Sitemap: https://rankriseusa.com/api/index.php/v1/blog/sitemap.xml

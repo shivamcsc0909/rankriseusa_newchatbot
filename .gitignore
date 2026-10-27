@@ -12,6 +12,21 @@ dist
 dist-ssr
 *.local
 
+# Environment variables (contain secrets - never commit)
+.env
+.env.*
+!.env.example
+public/api/.env
+
+# PHP API runtime logs
+public/api/storage/logs/*.log
+!public/api/storage/logs/.gitignore
+public/api/storage/chat/*
+!public/api/storage/chat/.gitignore
+public/api/storage/knowledge/*
+!public/api/storage/knowledge/.gitignore
+!public/api/storage/knowledge/README.md
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
@@ -22,3 +37,34 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Automatically generated safety ignore rules
+node_modules/
+.pnp/
+.pnp.js
+.next/
+.nuxt/
+dist/
+build/
+out/
+.cache/
+.gradle/
+android/app/build/
+**/build/
+*.apk
+*.aab
+*.so
+*.dylib
+*.bin
+*.ap_
+.env
+.env.local
+.env.*.local
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+env/
+.DS_Store
+Thumbs.db
+upload_all_to_github.py

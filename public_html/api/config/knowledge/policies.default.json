@@ -1,0 +1,26 @@
+[
+  {
+    "id": "policy-overview",
+    "title": "Policies Overview",
+    "keywords": ["policy", "policies", "privacy", "terms", "refund", "disclaimer", "cookies"],
+    "tags": ["policies"],
+    "is_active": true,
+    "content": "RankRise USA policies are published on the website:\n• Privacy Policy — /privacy-policy\n• Terms & Conditions — /terms-and-conditions\n• Refund & Cancellation — /refund-cancellation\n• Disclaimer — /disclaimer\n• Cookies Policy — /cookies-policy\n\nIf you need clarification on a specific clause, contact sam@RankRiseUSA.com."
+  },
+  {
+    "id": "policy-refund",
+    "title": "Refund Policy Summary",
+    "keywords": ["refund", "cancellation", "cancel", "money back"],
+    "tags": ["policies", "refund"],
+    "is_active": true,
+    "content": "Refund and cancellation terms depend on the service agreement and project stage. Full details are on /refund-cancellation. For billing questions, email sam@RankRiseUSA.com or call +1 (202) 888-2806."
+  },
+  {
+    "id": "policy-privacy",
+    "title": "Privacy Policy Summary",
+    "keywords": ["privacy", "data", "personal information", "gdpr"],
+    "tags": ["policies", "privacy"],
+    "is_active": true,
+    "content": "We respect your privacy and handle personal data according to our Privacy Policy at /privacy-policy. Contact us for data or privacy requests: sam@RankRiseUSA.com."
+  }
+]

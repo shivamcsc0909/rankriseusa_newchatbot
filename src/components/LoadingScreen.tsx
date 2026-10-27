@@ -5,8 +5,7 @@ export default function LoadingScreen() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 2000);
-    return () => clearTimeout(timer);
+    setIsLoading(false);
   }, []);
 
   if (!isLoading) return null;
@@ -36,14 +35,9 @@ export default function LoadingScreen() {
         </motion.div>
 
         {/* Brand Name */}
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
-          className="text-4xl font-bold text-gradient mb-4"
-        >
-          Rankriseusa
-        </motion.h1>
+        <p className="text-4xl font-bold text-gradient mb-4">
+          RankRise USA
+        </p>
 
         {/* Loading Bar */}
         <div className="w-64 h-2 bg-muted rounded-full overflow-hidden mx-auto">

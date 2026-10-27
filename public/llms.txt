@@ -1,0 +1,19 @@
+# RankRise USA
+
+> RankRise USA is an elite digital marketing, AI search engine optimization, and enterprise web development agency providing SEO, PPC, Neural Search Strategy, Branding, and Digital Growth Infrastructure.
+
+## Core Services & Intelligence Hub
+
+- [Services](https://rankriseusa.com/services): Digital marketing, web development, AI SEO, PPC, and enterprise growth solutions.
+- [Intelligence Hub & Blog](https://rankriseusa.com/blog): Executive intelligence publications, AI search strategy breakdowns, and SEO mechanics.
+- [Portfolio](https://rankriseusa.com/portfolio): Case studies and client results in web engineering and organic search scaling.
+- [Pricing](https://rankriseusa.com/pricing): Transparent growth retainers and project pricing.
+- [Free Audit](https://rankriseusa.com/free-audit): Complimentary website audit and neural search readiness check.
+- [Contact](https://rankriseusa.com/contact): Direct consultation with senior growth strategists.
+
+## Feeds & Machine Readability
+
+- [Sitemap Index](https://rankriseusa.com/sitemap.xml): XML sitemap for full website indexation.
+- [Blog Dynamic Sitemap](https://rankriseusa.com/api/index.php/v1/blog/sitemap.xml): Real-time XML sitemap for blog publications.
+- [RSS 2.0 Feed](https://rankriseusa.com/api/index.php/v1/blog/rss.xml): Dynamic RSS feed for content aggregators and LLM knowledge updates.
+- [Robots.txt](https://rankriseusa.com/robots.txt): AI crawler permission specifications.

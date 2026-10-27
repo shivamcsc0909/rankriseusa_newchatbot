@@ -1,0 +1,42 @@
+[
+  {
+    "id": "services-overview",
+    "title": "Services We Offer",
+    "keywords": ["services", "what do you do", "what services", "offer", "seo", "marketing", "web development", "app development", "branding"],
+    "tags": ["services"],
+    "is_active": true,
+    "content": "RankRise USA offers:\n\n1. SEO (Search Engine Optimization)\n2. SMO (Social Media Optimization)\n3. PPC + Meta Ads\n4. ORM (Online Reputation Management)\n5. Web Development\n6. App Development (iOS, Android, Flutter, React Native)\n7. Custom Software (CRM, LMS, ERP, EPS)\n8. AI Automation\n9. Branding & Graphic Design\n10. Hosting & Security / Maintenance\n\nTell me which service you need and I can share package details or connect you with our team."
+  },
+  {
+    "id": "services-seo",
+    "title": "SEO Services",
+    "keywords": ["seo", "search engine optimization", "ranking", "organic traffic", "keyword"],
+    "tags": ["services", "seo"],
+    "is_active": true,
+    "content": "Our SEO packages help improve organic rankings, technical health, content, and local visibility. Plans range from BASIC to MASTER depending on competition and goals. Visit /pricing for package details or ask for a custom SEO quote."
+  },
+  {
+    "id": "services-web",
+    "title": "Web Development",
+    "keywords": ["website", "web development", "web design", "wordpress", "shopify", "ecommerce", "landing page"],
+    "tags": ["services", "web"],
+    "is_active": true,
+    "content": "We build business websites, ecommerce stores, landing pages, and custom web apps (WordPress, Shopify, React, and more). Packages include Web Essential, Advanced, Professional, and Enterprise. Ask for a quote with your requirements."
+  },
+  {
+    "id": "services-app",
+    "title": "App Development",
+    "keywords": ["app", "mobile app", "android", "ios", "flutter", "react native"],
+    "tags": ["services", "app"],
+    "is_active": true,
+    "content": "We develop custom mobile apps for iOS and Android using Flutter, React Native, and native stacks. Scope and pricing depend on features, platforms, and integrations. Share your idea for a custom estimate."
+  },
+  {
+    "id": "services-ads",
+    "title": "PPC and Meta Ads",
+    "keywords": ["ppc", "google ads", "meta ads", "facebook ads", "paid ads", "performance marketing"],
+    "tags": ["services", "ads"],
+    "is_active": true,
+    "content": "We run Google Ads and Meta (Facebook/Instagram) campaigns with packages such as PPC-SERIOUS, PPC-STRATEGY, and PPC-STERIOD. Ad spend is separate from management fees. Ask which platform you want to advertise on."
+  }
+]

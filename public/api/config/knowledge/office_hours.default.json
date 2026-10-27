@@ -1,0 +1,18 @@
+[
+  {
+    "id": "office-hours",
+    "title": "Business Hours & Office Locations",
+    "keywords": ["hours", "business hours", "office hours", "timing", "open", "when are you open", "schedule", "timezone"],
+    "tags": ["office", "hours"],
+    "is_active": true,
+    "content": "Business hours (support & sales):\n• Monday–Friday: 9:00 AM – 6:00 PM (local office time)\n• Saturday: 10:00 AM – 2:00 PM (limited support)\n• Sunday: Closed\n\nUS Office: 4315 50th Street NW, Suite 100, Washington DC, United States | +1 (202) 888-2806\nIndia Office: B7 Sector 2, Noida, Uttar Pradesh, India | +91 75650 31848\n\nEmails are monitored daily: sam@RankRiseUSA.com"
+  },
+  {
+    "id": "office-locations",
+    "title": "Office Addresses",
+    "keywords": ["address", "location", "where are you", "office", "headquarters", "noida", "washington"],
+    "tags": ["office", "location"],
+    "is_active": true,
+    "content": "US Headquarters\n4315 50th Street NW, Suite 100\nWashington DC, United States\nPhone: +1 (202) 888-2806\n\nIndia Office\nB7 Sector 2, Noida, Uttar Pradesh, India\nPhone: +91 75650 31848"
+  }
+]

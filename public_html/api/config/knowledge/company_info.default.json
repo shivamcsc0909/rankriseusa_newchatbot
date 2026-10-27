@@ -1,0 +1,18 @@
+[
+  {
+    "id": "company-overview",
+    "title": "About RankRise USA",
+    "keywords": ["about", "company", "who are you", "rankrise", "agency", "what is rankrise", "organization"],
+    "tags": ["company", "about"],
+    "is_active": true,
+    "content": "RankRise USA is a digital growth agency headquartered in Washington, DC, with an India office in Noida. We help businesses grow through SEO, digital marketing (SMO/PPC), web development, app development, custom software (CRM/LMS/ERP), branding, and AI automation.\n\nWebsite: https://rankriseusa.com"
+  },
+  {
+    "id": "company-official-contact",
+    "title": "RankRise USA Official Contact Details",
+    "keywords": ["contact", "phone", "email", "office", "address", "location", "hq"],
+    "tags": ["contact", "company"],
+    "is_active": true,
+    "content": "US Headquarters\nEmail: sam@RankRiseUSA.com\nAlternate Email: sid.RankRiseUSA@gmail.com\nPhone: +1 (202) 888-2806\nAddress: 4315 50th Street NW, Suite 100, Washington DC, United States\n\nIndia Office\nPhone: +91 75650 31848\nAddress: B7 Sector 2, Noida, Uttar Pradesh, India"
+  }
+]

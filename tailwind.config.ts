@@ -79,6 +79,25 @@ const tailwindConfig: Config = {
         xl: "var(--shadow-xl)",
         '2xl': "var(--shadow-2xl)",
       },
+      keyframes: {
+        'rotate-cw': {
+          from: { transform: 'rotate(0deg)' },
+          to: { transform: 'rotate(360deg)' },
+        },
+        'rotate-ccw': {
+          from: { transform: 'rotate(0deg)' },
+          to: { transform: 'rotate(-360deg)' },
+        },
+        shimmer: {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(200%)' },
+        },
+      },
+      animation: {
+        'rotate-cw': 'rotate-cw linear infinite',
+        'rotate-ccw': 'rotate-ccw linear infinite',
+        shimmer: 'shimmer 2s infinite ease-in-out',
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],

@@ -1,0 +1,19 @@
+[
+    {
+        "id": "93772609-01be-43aa-9813-eda6773fd6ab",
+        "profile_id": "c2765a54-8ab7-4805-8fbc-5688f181676d",
+        "author_name": "Test User",
+        "author_email": "test@example.com",
+        "author_company": "Test Company",
+        "author_industry": "Tech",
+        "author_avatar": "https://example.com/avatar.jpg",
+        "target_type": "blog",
+        "target_id": "neural-architectures-future-of-seo-2024",
+        "parent_id": null,
+        "content": "This is a great article about SEO and AI neural architectures!",
+        "status": "approved",
+        "is_pinned": false,
+        "created_at": "2026-07-25T05:25:48+00:00",
+        "updated_at": "2026-07-25T05:25:48+00:00"
+    }
+]

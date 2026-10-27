@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NexusCore · product showcase</title>
+  <style>
+    /* -------------------------------------------------------------
+      DESIGN SYSTEM – modern, glassmorphism, developer grade
+      edit CSS variables below to change theme (spacing, colors)
+    ------------------------------------------------------------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg-page: #f4f7fb;
+      --surface: rgba(255,255,255,0.75);
+      --surface-solid: #ffffff;
+      --primary: #2563eb;
+      --primary-light: #3b82f6;
+      --secondary: #7c3aed;
+      --text-main: #1e293b;
+      --text-muted: #475569;
+      --border-light: rgba(0,0,0,0.08);
+      --shadow-sm: 0 8px 20px rgba(0,0,0,0.02), 0 2px 6px rgba(0,20,50,0.05);
+      --shadow-md: 0 20px 30px -10px rgba(0,20,40,0.15);
+      --radius-md: 18px;
+      --radius-sm: 12px;
+      --transition: all 0.2s ease;
+      --font-main: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+      /* tech badge colours (by category) */
+      --fe-color: #1e40af;
+      --be-color: #b45309;
+      --db-color: #047857;
+      --host-color: #6b21a8;
+      --mobile-color: #c2410c;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        transition: none !important;
+        animation: none !important;
+      }
+    }
+
+    body {
+      background: var(--bg-page);
+      font-family: var(--font-main);
+      color: var(--text-main);
+      line-height: 1.5;
+      padding: 2rem 1.5rem;
+      min-height: 100vh;
+    }
+
+    /* main layout */
+    .app {
+      max-width: 1600px;
+      margin: 0 auto;
+    }
+
+    /* hero section (compact) */
+    .hero {
+      margin-bottom: 2rem;
+    }
+    .hero h1 {
+      font-size: 2.2rem;
+      font-weight: 600;
+      background: linear-gradient(145deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: -0.02em;
+    }
+    .hero p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      margin-top: 0.25rem;
+    }
+
+    /* filter bar (search, sort, view toggle) */
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+      background: var(--surface);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid var(--border-light);
+      padding: 0.75rem 1.5rem;
+      border-radius: 60px;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .search-box {
+      flex: 2 1 260px;
+      display: flex;
+      align-items: center;
+      background: white;
+      border-radius: 40px;
+      padding: 0.3rem 0.3rem 0.3rem 1.2rem;
+      border: 1px solid var(--border-light);
+    }
+    .search-box input {
+      flex: 1;
+      border: none;
+      padding: 0.6rem 0.2rem;
+      background: transparent;
+      font-size: 1rem;
+      outline: none;
+    }
+    .search-box button {
+      background: var(--primary);
+      border: none;
+      color: white;
+      padding: 0.5rem 1.4rem;
+      border-radius: 40px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .search-box button:hover {
+      background: var(--primary-light);
+    }
+    .sort-select, .view-toggle {
+      background: white;
+      border-radius: 30px;
+      padding: 0.3rem 0.8rem;
+      border: 1px solid var(--border-light);
+      font-size: 0.95rem;
+      height: 42px;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .view-toggle button {
+      background: transparent;
+      border: none;
+      padding: 0.3rem 1rem;
+      border-radius: 30px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition);
+      color: var(--text-muted);
+    }
+    .view-toggle button.active {
+      background: var(--primary);
+      color: white;
+    }
+
+    /* left column + main grid area */
+    .content-pane {
+      display: flex;
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+    /* categories sidebar (collapsible subcategories) */
+    .categories-sidebar {
+      flex: 0 0 260px;
+      background: var(--surface);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-radius: var(--radius-md);
+      padding: 1.5rem 1rem;
+      border: 1px solid var(--border-light);
+      height: fit-content;
+      box-shadow: var(--shadow-sm);
+    }
+    .categories-sidebar h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 1.2rem;
+      letter-spacing: -0.2px;
+    }
+    .category-item {
+      margin-bottom: 0.75rem;
+      border-radius: var(--radius-sm);
+    }
+    .category-header {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 500;
+      padding: 0.5rem 0.5rem 0.5rem 1rem;
+      background: rgba(255,255,255,0.5);
+      border-radius: 30px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .category-header:hover {
+      background: white;
+    }
+    .category-header .arrow {
+      margin-left: auto;
+      font-size: 1.2rem;
+      transition: transform 0.2s;
+    }
+    .category-header.collapsed .arrow {
+      transform: rotate(-90deg);
+    }
+    .subcategory-list {
+      list-style: none;
+      margin-left: 1.8rem;
+      margin-top: 0.3rem;
+      max-height: 500px;
+      overflow: hidden;
+      transition: max-height 0.2s;
+    }
+    .category-header.collapsed + .subcategory-list {
+      max-height: 0 !important;
+      margin-top: 0;
+    }
+    .subcategory-item {
+      padding: 0.4rem 0.8rem;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .subcategory-item:hover {
+      background: var(--primary-light);
+      color: white;
+    }
+    .subcategory-item.active {
+      background: var(--primary);
+      color: white;
+      font-weight: 500;
+    }
+    .subcategory-item .count {
+      background: rgba(0,0,0,0.08);
+      padding: 0.1rem 0.5rem;
+      border-radius: 20px;
+      font-size: 0.75rem;
+    }
+
+    /* main grid area */
+    .main-grid-area {
+      flex: 1;
+    }
+    /* featured strip (larger cards) */
+    .featured-strip {
+      background: var(--surface);
+      backdrop-filter: blur(4px);
+      border-radius: var(--radius-md);
+      padding: 1.5rem 1rem;
+      margin-bottom: 2rem;
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-sm);
+    }
+    .featured-strip h2 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 1.2rem;
+    }
+    .featured-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.2rem;
+    }
+    .featured-card {
+      background: var(--surface-solid);
+      border-radius: var(--radius-sm);
+      padding: 1rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-light);
+      transition: var(--transition);
+    }
+    .featured-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    /* product grid (responsive) */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+      transition: var(--transition);
+    }
+    .product-grid.list-view {
+      grid-template-columns: 1fr;
+    }
+    .product-card {
+      background: var(--surface-solid);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-light);
+      padding: 1.2rem;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+    }
+    .card-image {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: #e2e8f0;
+      border-radius: var(--radius-sm);
+      margin-bottom: 1rem;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      font-weight: 600;
+      color: #94a3b8;
+    }
+    .card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .product-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+    }
+    .product-tagline {
+      color: var(--primary);
+      font-weight: 500;
+      font-size: 0.9rem;
+      margin-bottom: 0.75rem;
+    }
+    .tech-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem 0.6rem;
+      margin: 0.8rem 0;
+    }
+    .badge {
+      font-size: 0.7rem;
+      padding: 0.25rem 0.7rem;
+      border-radius: 20px;
+      font-weight: 500;
+      background: #e9eef3;
+      color: #1e293b;
+      white-space: nowrap;
+    }
+    .badge.fe { background: #dbeafe; color: #1e40af; }
+    .badge.be { background: #fed7aa; color: #b45309; }
+    .badge.db { background: #d1fae5; color: #047857; }
+    .badge.host { background: #ede9fe; color: #6b21a8; }
+    .badge.mobile { background: #ffe4d5; color: #c2410c; }
+
+    .product-description {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin: 0.5rem 0 1rem;
+      flex: 1;
+    }
+    .card-actions {
+      display: flex;
+      gap: 0.8rem;
+      margin-top: auto;
+    }
+    .btn {
+      background: white;
+      border: 1px solid var(--border-light);
+      padding: 0.5rem 1rem;
+      border-radius: 40px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition);
+      box-shadow: var(--shadow-sm);
+      flex: 1;
+      text-align: center;
+    }
+    .btn-primary {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: white;
+    }
+    .btn-primary:hover {
+      background: var(--primary-light);
+    }
+    .btn-outline:hover {
+      background: #f1f5f9;
+    }
+
+    /* modal + side panel */
+    .modal-overlay, .side-panel-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.3);
+      backdrop-filter: blur(4px);
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+    .modal-overlay[aria-hidden="false"], .side-panel-overlay[aria-hidden="false"] {
+      display: flex;
+    }
+    .modal-content {
+      background: white;
+      max-width: 800px;
+      width: 90%;
+      border-radius: var(--radius-md);
+      padding: 2rem;
+      box-shadow: var(--shadow-md);
+      position: relative;
+    }
+    .side-panel {
+      background: white;
+      position: fixed;
+      top: 0;
+      right: 0;
+      height: 100vh;
+      width: min(90%, 400px);
+      box-shadow: var(--shadow-md);
+      padding: 2rem 1.5rem;
+      overflow-y: auto;
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+    }
+    .side-panel-overlay[aria-hidden="false"] .side-panel {
+      transform: translateX(0);
+    }
+    .close-btn {
+      position: absolute;
+      top: 1rem;
+      right: 1.5rem;
+      font-size: 2rem;
+      line-height: 1;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+    }
+
+    .load-more {
+      display: flex;
+      justify-content: center;
+      margin: 2.5rem 0 1rem;
+    }
+    .load-more button {
+      background: white;
+      border: 1px solid var(--border-light);
+      padding: 0.75rem 2.5rem;
+      border-radius: 40px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* fallback */
+    img[data-src] {
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    img.loaded {
+      opacity: 1;
+    }
+
+    /* responsiveness */
+    @media (max-width: 800px) {
+      .content-pane {
+        flex-direction: column;
+      }
+      .categories-sidebar {
+        flex: auto;
+        width: 100%;
+      }
+      .filter-bar {
+        border-radius: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="app">
+  <!-- hero -->
+  <div class="hero">
+    <h1>NexusCore · product studio</h1>
+    <p>Digital marketing & IT solutions — explore our developer-grade toolkit</p>
+  </div>
+
+  <!-- filter bar with search, sort, view toggle -->
+  <div class="filter-bar">
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Search by name, tech, or description..." aria-label="Search products">
+      <button id="searchBtn">Search</button>
+    </div>
+    <div class="sort-select">
+      <label for="sortBy">Sort:</label>
+      <select id="sortBy" aria-label="Sort products">
+        <option value="newest">Newest</option>
+        <option value="popular">Popular (featured first)</option>
+        <option value="az">A–Z</option>
+      </select>
+    </div>
+    <div class="view-toggle" role="group" aria-label="View mode">
+      <button id="gridViewBtn" class="active">Grid</button>
+      <button id="listViewBtn">List</button>
+    </div>
+  </div>
+
+  <!-- left sidebar + main content -->
+  <div class="content-pane">
+    <!-- categories column (populated by js) -->
+    <aside class="categories-sidebar" aria-label="product categories">
+      <h3>📁 Categories</h3>
+      <div id="categoryList"></div>
+    </aside>
+
+    <!-- right main area -->
+    <main class="main-grid-area">
+      <!-- featured strip (6 items) -->
+      <section class="featured-strip" aria-label="Featured projects">
+        <h2>✨ Featured projects</h2>
+        <div id="featuredGrid" class="featured-grid"></div>
+      </section>
+
+      <!-- product grid -->
+      <div id="productGridContainer" class="product-grid"></div>
+
+      <!-- load more -->
+      <div class="load-more">
+        <button id="loadMoreBtn">Load more products</button>
+      </div>
+    </main>
+  </div>
+</div>
+
+<!-- demo modal -->
+<div id="demoModal" class="modal-overlay" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="modal-content">
+    <button class="close-btn" id="closeModalBtn" aria-label="Close modal">&times;</button>
+    <h3 id="modalTitle">Demo preview</h3>
+    <div id="modalBody" style="min-height: 200px; display: flex; align-items: center; justify-content: center;">
+      <!-- iframe or fallback injected here -->
+    </div>
+  </div>
+</div>
+
+<!-- side panel for details -->
+<div id="detailPanelOverlay" class="side-panel-overlay" aria-hidden="true">
+  <div class="side-panel" role="dialog" aria-modal="true" aria-label="Product details">
+    <button class="close-btn" id="closePanelBtn">&times;</button>
+    <div id="panelContent"></div>
+  </div>
+</div>
+
+<script>
+  (function() {
+    "use strict";
+    // ================================================================
+    // PRODUCT DATA (edit this array to add/remove products)
+    // ================================================================
+    const products = [
+      // CRM category (5)
+      { id: 1, title: "Simple CRM", category: "CRM", subcategory: "Sales", tagline: "Minimal & effective", description: "Easy-to-use customer relationship tool for small teams.", demoUrl: "https://example.com/demo1", sourceUrl: "#", featured: true, tech: { frontend: ["React"], backend: ["Node.js"], database: ["MongoDB"], hosting: ["Vercel"], mobile: [] }, image: "🔹" },
+      { id: 2, title: "Sales CRM", category: "CRM", subcategory: "Enterprise", tagline: "Boost conversions", description: "Advanced sales pipeline with analytics.", demoUrl: null, sourceUrl: "#", featured: false, tech: { frontend: ["Vue"], backend: ["Laravel"], database: ["MySQL"], hosting: ["AWS"], mobile: [] }, image: "📊" },
+      { id: 3, title: "Real Estate CRM", category: "CRM", subcategory: "Real Estate", tagline: "Property client management", description: "Tailored for agents and brokerages.", demoUrl: "#", sourceUrl: "#", featured: false, tech: { frontend: ["Angular"], backend: [".NET"], database: ["PostgreSQL"], hosting: ["Azure"], mobile: [] }, image: "🏠" },
+      { id: 4, title: "DGMarket CRM", category: "CRM", subcategory: "E-commerce", tagline: "Digital market fit", description: "CRM for online merchants.", demoUrl: "#", sourceUrl: "#", featured: true, tech: { frontend: ["Next.js"], backend: ["Node.js"], database: ["Firebase"], hosting: ["Vercel"], mobile: [] }, image: "📈" },
+      { id: 5, title: "CRM Demo", category: "CRM", subcategory: "Demo", tagline: "Try before you buy", description: "Interactive demo of our flagship CRM.", demoUrl: "#", sourceUrl: "#", featured: false, tech: { frontend: ["React"], backend: ["Express"], database: ["MongoDB"], hosting: ["Render"], mobile: [] }, image: "🔄" },
+      // E-commerce & Marketplaces (8)
+      { id: 6, title: "E-Commerce Platform", category: "E-commerce & Marketplaces", subcategory: "Retail", tagline: "Full-featured store", description: "Modern stack e-commerce with cart and checkout.", demoUrl: "#", sourceUrl: "#", featured: true, tech: { frontend: ["Next.js"], backend: ["Node.js"], database: ["PostgreSQL"], hosting: ["AWS"], mobile: [] }, image: "🛒" },
+      { id: 7, title: "Smart Gadget Shop", category: "E-commerce & Marketplaces", subcategory: "Electronics", tagline: "Gadget store", description: "Sell smart devices with ease.", demoUrl: null, sourceUrl: "#", featured: false, tech: { frontend: ["Vue"], backend: ["Django"], database: ["MySQL"], hosting: ["DigitalOcean"], mobile: [] }, image: "📱" },
+      { id: 8, title: "HeadphonesOnly", category: "E-commerce & Marketplaces", subcategory: "Audio", tagline: "Audiophile paradise", description: "Curated headphones and gear.", demoUrl: "#", sourceUrl: "#", featured: false, tech: { frontend: ["React"], backend: ["Node.js"], database: ["MongoDB"], hosting: ["Vercel"], mobile: [] }, image: "🎧" },
+      { id: 9, title: "ShoppingAppA", category: "E-commerce & Marketplaces", subcategory: "Mobile", tagline: "Shop on the go", description: "React Native app for fashion.", demoUrl: "#", sourceUrl: "#", featured: false, tech: { frontend: [], backend: ["Node.js"], database: ["Firebase"], hosting: ["Firebase"], mobile: ["React Native"] }, image: "🛍️" },
+      { id: 10, title: "GharkaMarket", category: "E-commerce & Marketplaces", subcategory: "Grocery", tagline: "Local grocery delivery", description: "Hyperlocal market solution.", demoUrl: "#", sourceUrl: "#", featured: true, tech: { frontend: ["React"], backend: ["Spring"], database: ["MySQL"], hosting: ["AWS"], mobile: ["iOS (Swift)"] }, image: "🥦" },
+      { id: 11, title: "Marketplace (snowy-nine)", category: "E-commerce & Marketplaces", subcategory: "Multi-vendor", tagline: "Vendor marketplace", description: "Multi-vendor with admin panel.", demoUrl: "#", sourceUrl: "#", featured: false, tech: { frontend: ["Vue"], backend: ["Laravel"], database: ["PostgreSQL"], hosting: ["Render"], mobile: [] }, image: "❄️" },
+      { id: 12, title: "Marketplace (plum)", category: "E-commerce & Marketplaces", subcategory: "Niche", tagline: "Plum curated goods", description: "Handmade & vintage items.", demoUrl: null, sourceUrl: "#", featured: false, tech: { frontend: ["Angular"], backend: [".NET"], database: ["SQL Server"], hosting: ["Azure"], mobile: [] }, image: "🍑" },
+      // Productivity & Business (5)
+      { id: 13, title: "Task Management App", category: "Productivity & Business", subcategory: "Productivity", tagline: "Get things done", description: "Kanban and tasks.", demoUrl: "#", sourceUrl: "#", featured: true, tech: { frontend: ["React"], backend: ["Node.js"], database: ["MongoDB"], hosting: ["Vercel"], mobile: [] }, image: "✅" },
+      { id: 14, title: "Job Portal with Admin Panel", category: "Productivity & Business", subcategory: "HR", tagline: "Hiring made easy", description: "Job board and applicant tracking.", demoUrl: "#", sourceUrl: "#", featured: false, tech: { frontend: ["Next.js"], backend: ["Django"], database: ["PostgreSQL"], hosting: ["AWS"], mobile: [] }, image: "💼" },
+      { id: 15, title: "Business Portfolio Website", category: "Productivity & Business", subcategory: "Agency", tagline: "Showcase your work", description: "SaaS portfolio template.", demoUrl: "#", sourceUrl: "#", featured: false, tech: { frontend: ["Vue"], backend: [], database: [], hosting: ["Netlify"], mobile: [] }, image: "📁" },
+      { id: 16, title: "Personal Finance Tracker", category: "Productivity & Business", subcategory: "Finance", tagline: "Track expenses", description: "Budgeting and insights.", demoUrl: "#", sourceUrl: "#", featured: true, tech: { frontend: ["React"], backend: ["Node.js"], database: ["SQLite"], hosting: ["Render"], mobile: [] }, image: "💰" },
+      { id: 17, title: "School Report Generator", category: "Productivity & Business", subcategory: "Education", tagline: "Automated reports", description: "Generate student reports.", demoUrl: "#", sourceUrl: "#", featured: false, tech: { frontend: ["Angular"], backend: ["PHP"], database: ["MySQL"], hosting: ["cPanel"], mobile: [] }, image: "📚" },
+      // Communication & AI (4)
+      { id: 18, title: "Real-Time Chat Application", category: "Communication & AI", subcategory: "Messaging", tagline: "Live chat", description: "WebSocket based chat.", demoUrl: "#", sourceUrl: "#", featured: false, tech: { frontend: ["React"], backend: ["Node.js", "Socket.io"], database: ["Redis"], hosting: ["Heroku"], mobile: [] }, image: "💬" },
+      { id: 19, title: "AI Sentiment Chatbot", category: "Communication & AI", subcategory: "AI", tagline: "NLP chatbot", description: "Sentiment analysis for feedback.", demoUrl: "#", sourceUrl: "#", featured: true, tech: { frontend: ["Next.js"], backend: ["Python", "Flask"], database: ["MongoDB"], hosting: ["AWS"], mobile: [] }, image: "🤖" },
+      { id: 20, title: "AI Auto CV Scoring Tool Bot", category: "Communication & AI", subcategory: "HR Tech", tagline: "Score resumes", description: "AI-powered CV screening.", demoUrl: null, sourceUrl: "#", featured: false, tech: { frontend: ["React"], backend: ["FastAPI"], database: ["PostgreSQL"], hosting: ["Azure"], mobile: [] }, image: "📄" },
+      { id: 21, title: "Social Media Dashboard", category: "Communication & AI", subcategory: "Analytics", tagline: "Unified inbox", description: "Manage social accounts.", demoUrl: "#", sourceUrl: "#", featured: false, tech: { frontend: ["Vue"], backend: ["Node.js"], database: ["MySQL"], hosting: ["DigitalOcean"], mobile: [] }, image: "📊" },
+      // Enterprise & Integration (2)
+      { id: 22, title: "SAP Integration Portal", category: "Enterprise & Integration", subcategory: "ERP", tagline: "Connect SAP", description: "Middleware for SAP.", demoUrl: "#", sourceUrl: "#", featured: true, tech: { frontend: ["React"], backend: ["Java", "Spring"], database: ["HANA"], hosting: ["SAP Cloud"], mobile: [] }, image: "🔌" },
+      { id: 23, title: "ERP Integration Portal", category: "Enterprise & Integration", subcategory: "ERP", tagline: "Unify ERPs", description: "Integration with multiple ERPs.", demoUrl: "#", sourceUrl: "#", featured: false, tech: { frontend: ["Angular"], backend: [".NET"], database: ["SQL Server"], hosting: ["Azure"], mobile: [] }, image: "🏢" },
+      // Education & LMS (3)
+      { id: 24, title: "E-Learning Platform", category: "Education & LMS", subcategory: "LMS", tagline: "Learn anywhere", description: "Video courses & quizzes.", demoUrl: "#", sourceUrl: "#", featured: false, tech: { frontend: ["React"], backend: ["Django"], database: ["PostgreSQL"], hosting: ["AWS"], mobile: [] }, image: "🎓" },
+      { id: 25, title: "School Website", category: "Education & LMS", subcategory: "Website", tagline: "School CMS", description: "Website builder for schools.", demoUrl: "#", sourceUrl: "#", featured: false, tech: { frontend: ["Next.js"], backend: ["Node.js"], database: ["MongoDB"], hosting: ["Vercel"], mobile: [] }, image: "🏫" },
+      { id: 26, title: "Interactive Web Gallery", category: "Education & LMS", subcategory: "Media", tagline: "Art showcase", description: "3D interactive gallery.", demoUrl: "#", sourceUrl: "#", featured: false, tech: { frontend: ["Three.js"], backend: [], database: [], hosting: ["Netlify"], mobile: [] }, image: "🖼️" },
+      // Media & Animation (4) – but we need at least 24, so continue
+      { id: 27, title: "Animated Login Page", category: "Media & Animation", subcategory: "UI", tagline: "Smooth login", description: "CSS/JS animated login.", demoUrl: "#", sourceUrl: "#", featured: false, tech: { frontend: ["HTML5", "CSS3"], backend: [], database: [], hosting: ["Netlify"], mobile: [] }, image: "🎬" },
+      { id: 28, title: "Lava Flame Animation", category: "Media & Animation", subcategory: "Canvas", tagline: "WebGL fire", description: "Lava lamp effect.", demoUrl: "#", sourceUrl: "#", featured: false, tech: { frontend: ["p5.js"], backend: [], database: [], hosting: ["GitHub Pages"], mobile: [] }, image: "🔥" },
+    ];
+    // ensure at least 24 items – we have 28. perfect.
+
+    // ----- categories extraction -----
+    function buildCategoryTree(products) {
+      const cats = {};
+      products.forEach(p => {
+        if (!cats[p.category]) cats[p.category] = {};
+        if (!cats[p.category][p.subcategory]) cats[p.category][p.subcategory] = 0;
+        cats[p.category][p.subcategory] += 1;
+      });
+      return cats;
+    }
+
+    // ----- global state -----
+    let currentFilter = { category: null, subcategory: null, search: '', tech: null };
+    let currentSort = 'newest';
+    let currentView = 'grid';
+    let visibleCount = 12;
+    let filteredList = products.slice(); // will be updated
+
+    // references
+    const categoryDiv = document.getElementById('categoryList');
+    const featuredGrid = document.getElementById('featuredGrid');
+    const productContainer = document.getElementById('productGridContainer');
+    const searchInput = document.getElementById('searchInput');
+    const searchBtn = document.getElementById('searchBtn');
+    const sortSelect = document.getElementById('sortBy');
+    const gridViewBtn = document.getElementById('gridViewBtn');
+    const listViewBtn = document.getElementById('listViewBtn');
+    const loadMoreBtn = document.getElementById('loadMoreBtn');
+    const demoModal = document.getElementById('demoModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalBody = document.getElementById('modalBody');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+    const panelOverlay = document.getElementById('detailPanelOverlay');
+    const panelContent = document.getElementById('panelContent');
+    const closePanelBtn = document.getElementById('closePanelBtn');
+
+    // ----- render helpers -----
+    function techBadges(tech) {
+      let html = '';
+      if (tech.frontend) tech.frontend.forEach(t => html += `<span class="badge fe">${t}</span>`);
+      if (tech.backend) tech.backend.forEach(t => html += `<span class="badge be">${t}</span>`);
+      if (tech.database) tech.database.forEach(t => html += `<span class="badge db">${t}</span>`);
+      if (tech.hosting) tech.hosting.forEach(t => html += `<span class="badge host">${t}</span>`);
+      if (tech.mobile && tech.mobile.length) tech.mobile.forEach(t => html += `<span class="badge mobile">${t}</span>`);
+      return html;
+    }
+
+    function renderProductCard(p, featured = false) {
+      const cardClass = featured ? 'featured-card' : 'product-card';
+      return `
+        <div class="${cardClass}" data-id="${p.id}">
+          <div class="card-image"><img data-src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='80' viewBox='0 0 100 80'%3E%3Crect width='100' height='80' fill='%23cbd5e1' /%3E%3Ctext x='10' y='45' font-size='30' fill='%234b5563'%3E${p.image}%3C/text%3E%3C/svg%3E" alt="${p.title}" width="300" height="180" loading="lazy" decoding="async"></div>
+          <div class="product-title">${p.title}</div>
+          <div class="product-tagline">${p.tagline}</div>
+          <div class="tech-badges">${techBadges(p.tech)}</div>
+          <div class="product-description">${p.description.substring(0,70)}…</div>
+          <div class="card-actions">
+            <button class="btn btn-primary demo-btn" data-id="${p.id}" data-demo="${p.demoUrl || ''}">Demo</button>
+            <button class="btn btn-outline details-btn" data-id="${p.id}">Details</button>
+          </div>
+        </div>
+      `;
+    }
+
+    // filtering & sorting
+    function filterProducts() {
+      return products.filter(p => {
+        if (currentFilter.category && p.category !== currentFilter.category) return false;
+        if (currentFilter.subcategory && p.subcategory !== currentFilter.subcategory) return false;
+        if (currentFilter.search) {
+          const term = currentFilter.search.toLowerCase();
+          if (!p.title.toLowerCase().includes(term) && !p.description.toLowerCase().includes(term) &&
+              !p.tagline.toLowerCase().includes(term) && !JSON.stringify(p.tech).toLowerCase().includes(term)) return false;
+        }
+        return true;
+      });
+    }
+
+    function sortProducts(arr) {
+      const sorted = [...arr];
+      if (currentSort === 'newest') sorted.sort((a,b) => b.id - a.id);
+      else if (currentSort === 'popular') sorted.sort((a,b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0));
+      else if (currentSort === 'az') sorted.sort((a,b) => a.title.localeCompare(b.title));
+      return sorted;
+    }
+
+    function renderAll() {
+      const filtered = filterProducts();
+      filteredList = sortProducts(filtered);
+      // featured (first 6 featured items from filtered? better use original featured from all, but we show only from filtered? we'll show from all but filter consistency: show from all)
+      const featuredItems = products.filter(p => p.featured).slice(0,6);
+      featuredGrid.innerHTML = featuredItems.map(p => renderProductCard(p, true)).join('');
+
+      const toShow = filteredList.slice(0, visibleCount);
+      productContainer.innerHTML = toShow.map(p => renderProductCard(p)).join('');
+      productContainer.className = `product-grid ${currentView === 'list' ? 'list-view' : ''}`;
+      // lazy load images
+      observeImages();
+      // update categories sidebar
+      renderCategories();
+    }
+
+    // intersection observer for images
+    const imageObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          const img = e.target;
+          img.src = img.dataset.src;
+          img.classList.add('loaded');
+          imageObserver.unobserve(img);
+        }
+      });
+    });
+    function observeImages() {
+      document.querySelectorAll('img[data-src]').forEach(img => imageObserver.observe(img));
+    }
+
+    // render category tree
+    function renderCategories() {
+      const tree = buildCategoryTree(products);
+      let html = '';
+      for (let cat in tree) {
+        const subcats = tree[cat];
+        const isOpen = true; // default open, can be toggled by user
+        html += `<div class="category-item">
+          <div class="category-header" role="button" tabindex="0" aria-expanded="true">
+            <span>${cat}</span> <span class="arrow">▼</span>
+          </div>
+          <ul class="subcategory-list">`;
+        for (let sub in subcats) {
+          html += `<li class="subcategory-item" data-cat="${cat}" data-sub="${sub}">${sub} <span class="count">${subcats[sub]}</span></li>`;
+        }
+        html += `</ul></div>`;
+      }
+      categoryDiv.innerHTML = html;
+      // add click toggles for category headers
+      document.querySelectorAll('.category-header').forEach(h => {
+        h.addEventListener('click', (e) => {
+          e.currentTarget.classList.toggle('collapsed');
+          const expanded = e.currentTarget.getAttribute('aria-expanded') === 'true' ? 'false' : 'true';
+          e.currentTarget.setAttribute('aria-expanded', expanded);
+        });
+      });
+      // subcategory click filter
+      document.querySelectorAll('.subcategory-item').forEach(el => {
+        el.addEventListener('click', (e) => {
+          const cat = el.dataset.cat;
+          const sub = el.dataset.sub;
+          document.querySelectorAll('.subcategory-item').forEach(i => i.classList.remove('active'));
+          el.classList.add('active');
+          currentFilter.category = cat;
+          currentFilter.subcategory = sub;
+          visibleCount = 12; // reset pagination
+          renderAll();
+        });
+      });
+    }
+
+    // event listeners
+    searchBtn.addEventListener('click', () => {
+      currentFilter.search = searchInput.value;
+      visibleCount = 12;
+      renderAll();
+    });
+    sortSelect.addEventListener('change', (e) => {
+      currentSort = e.target.value;
+      renderAll();
+    });
+    gridViewBtn.addEventListener('click', () => {
+      currentView = 'grid';
+      gridViewBtn.classList.add('active');
+      listViewBtn.classList.remove('active');
+      renderAll();
+    });
+    listViewBtn.addEventListener('click', () => {
+      currentView = 'list';
+      listViewBtn.classList.add('active');
+      gridViewBtn.classList.remove('active');
+      renderAll();
+    });
+    loadMoreBtn.addEventListener('click', () => {
+      visibleCount += 8;
+      renderAll();
+    });
+
+    // modal & panel logic with console analytics
+    document.addEventListener('click', (e) => {
+      if (e.target.classList.contains('demo-btn')) {
+        const id = e.target.dataset.id;
+        const product = products.find(p => p.id == id);
+        console.log(`[analytics] Demo clicked for "${product.title}" (ID: ${id})`);
+        modalTitle.innerText = `${product.title} · demo`;
+        modalBody.innerHTML = product.demoUrl ? `<iframe src="${product.demoUrl}" style="width:100%; height:300px; border:none; border-radius:12px;" title="demo"></iframe>` : `<div style="text-align:center; padding:2rem">⚠️ No live demo available<br><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='120' viewBox='0 0 200 120'%3E%3Crect width='200' height='120' fill='%23e2e8f0'/%3E%3Ctext x='30' y='70' fill='%234a5568' font-size='16'%3EPreview%3C/text%3E%3C/svg%3E" alt="Demo Preview Placeholder" width="200" height="120" loading="lazy" decoding="async" style="margin-top:1rem"></div>`;
+        demoModal.setAttribute('aria-hidden', 'false');
+      }
+      if (e.target.classList.contains('details-btn')) {
+        const id = e.target.dataset.id;
+        const p = products.find(p => p.id == id);
+        console.log(`[analytics] Details opened for "${p.title}" (ID: ${id})`);
+        panelContent.innerHTML = `
+          <h2>${p.title}</h2>
+          <p><strong>${p.tagline}</strong></p>
+          <p>${p.description}</p>
+          <p><strong>Category:</strong> ${p.category} / ${p.subcategory}</p>
+          <div><strong>Tech stack:</strong><br> ${techBadges(p.tech)}</div>
+          <p><strong>Tags:</strong> ${p.tags ? p.tags.join(', ') : '—'}</p>
+          <p><strong>Demo:</strong> ${p.demoUrl ? `<a href="${p.demoUrl}" target="_blank">${p.demoUrl}</a>` : 'none'}</p>
+          <p><strong>Repo:</strong> ${p.sourceUrl ? `<a href="${p.sourceUrl}">source</a>` : 'private'}</p>
+        `;
+        panelOverlay.setAttribute('aria-hidden', 'false');
+      }
+    });
+
+    closeModalBtn.addEventListener('click', () => demoModal.setAttribute('aria-hidden', 'true'));
+    closePanelBtn.addEventListener('click', () => panelOverlay.setAttribute('aria-hidden', 'true'));
+    window.addEventListener('click', (e) => { if (e.target === demoModal) demoModal.setAttribute('aria-hidden', 'true'); if (e.target === panelOverlay) panelOverlay.setAttribute('aria-hidden', 'true'); });
+
+    // initial render
+    renderAll();
+  })();
+</script>
+</body>
+</html>

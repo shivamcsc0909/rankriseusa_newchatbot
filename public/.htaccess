@@ -1,0 +1,101 @@
+# ==============================================================================
+# RankRise USA - Production .htaccess Configuration
+# Full SPA Routing, HTTPS Enforcement, Fast Caching, Gzip/Brotli, and PHP Support
+# ==============================================================================
+
+# Custom Error Documents
+ErrorDocument 404 /404.html
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # 1. Enforce HTTPS (Canonical Secure Protocol)
+  RewriteCond %{HTTPS} off
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # 2. PHP files served directly without rewrite
+  RewriteRule \.php$ - [L]
+
+  # 3. Allow /api/* to be handled by PHP backend without SPA hijack
+  RewriteRule ^api(/|$) - [L]
+
+  # 4. If request is an existing physical file or directory, serve directly
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # 5. Route all other frontend URLs to React SPA entry
+  RewriteRule ^ index.html [L]
+</IfModule>
+
+# ==============================================================================
+# Text Compression (Brotli & Gzip / Deflate)
+# ==============================================================================
+<IfModule mod_brotli.c>
+  AddOutputFilterByType BROTLI_COMPRESS text/html text/plain text/xml text/css text/javascript application/javascript application/x-javascript application/json application/xml image/svg+xml font/ttf font/otf font/woff font/woff2
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/x-javascript application/json application/xml image/svg+xml font/ttf font/otf font/woff font/woff2
+</IfModule>
+
+# ==============================================================================
+# Browser Caching Policy (Far-Future Expiration for Performance & PageSpeed)
+# ==============================================================================
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault "access plus 1 month"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/jpg "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/x-icon "access plus 1 year"
+  ExpiresByType video/mp4 "access plus 1 year"
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType font/woff "access plus 1 year"
+  ExpiresByType font/ttf "access plus 1 year"
+  ExpiresByType application/json "access plus 0 seconds"
+  ExpiresByType text/html "access plus 0 seconds"
+</IfModule>
+
+# ==============================================================================
+# MIME Types Mapping
+# ==============================================================================
+<IfModule mod_mime.c>
+  AddType application/manifest+json .webmanifest
+  AddType application/json .json
+  AddType application/xml .xml
+  AddType image/webp .webp
+  AddType font/woff2 .woff2
+</IfModule>
+
+# ==============================================================================
+# Cache-Control & Security Headers
+# ==============================================================================
+<IfModule mod_headers.c>
+  # Cache static hashed assets for 1 year
+  <FilesMatch "\.(js|css|webp|png|jpg|jpeg|svg|woff|woff2|mp4)$">
+    Header set Cache-Control "max-age=31536000, public, immutable"
+  </FilesMatch>
+
+  # HTML & WebManifest must always be revalidated for instant updates
+  <FilesMatch "^(index\.html|404\.html|site\.webmanifest|manifest\.json)$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+  </FilesMatch>
+
+  <FilesMatch "\.webmanifest$">
+    Header set Content-Type "application/manifest+json; charset=utf-8"
+  </FilesMatch>
+
+  # Security Headers for Google/Lighthouse SEO Compliance
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+</IfModule>

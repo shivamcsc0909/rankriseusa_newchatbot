@@ -1,0 +1,35 @@
+# Protect RankRise API internals while preserving direct PayPal scripts.
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Allow existing PayPal scripts + infrastructure entrypoints.
+  RewriteRule ^(create-order|capture-order|health|index)\.php$ - [L]
+
+  # Deny HTTP access to PayPal config include and infrastructure dirs.
+  RewriteRule ^config\.php$ - [F,L]
+  RewriteRule ^(config|lib|middleware|helpers|routes|storage|sql|services|repositories)/ - [F,L]
+  RewriteRule ^bootstrap\.php$ - [F,L]
+  RewriteRule ^env\.example$ - [F,L]
+
+  # Front-controller for clean infrastructure paths:
+  #   /api/health  -> /api/index.php/health
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^(.*)$ index.php/$1 [QSA,L]
+</IfModule>
+
+# Never cache API responses (Hostinger LiteSpeed was applying ExpiresDefault).
+<IfModule mod_headers.c>
+  Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
+  Header set Pragma "no-cache"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Strict-Transport-Security "max-age=31536000"
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive Off
+</IfModule>
+
+<FilesMatch "^\.env">
+  Require all denied
+</FilesMatch>

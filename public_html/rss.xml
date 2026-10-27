@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Static fallback. Live CMS RSS: /api/index.php/v1/blog/rss.xml -->
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>RankRise USA Intelligence Hub</title>
+    <link>https://rankriseusa.com/blog</link>
+    <description>Executive intelligence and strategy on digital marketing, AI search, and growth mechanics. For the live feed use https://rankriseusa.com/api/index.php/v1/blog/rss.xml</description>
+    <language>en-us</language>
+    <atom:link href="https://rankriseusa.com/api/index.php/v1/blog/rss.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

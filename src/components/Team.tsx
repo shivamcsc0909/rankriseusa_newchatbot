@@ -1,60 +1,63 @@
 import { motion } from 'framer-motion';
-import { ChevronLeft, ChevronRight, Linkedin, Twitter, Mail, Phone } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Linkedin, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useState, useEffect } from 'react';
 
 export default function Team() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [hoveredIndex, setHoveredIndex] = useState(null);
 
   const team = [
     {
-      name: 'Sam Smith',
-      role: 'Business Development Manager',
-      email: 'sam.smith@rankriseusa.com',
-      phone: '+1 (555) 123-4567',
-      gradient: 'from-orange-400 to-pink-500',
-      social: { linkedin: '#', twitter: '#', email: 'sam.smith@rankriseusa.com' }
+      name: 'Shivam Pandey',
+      role: 'Technical Lead & Full Stack Developer',
+      linkedin: 'https://www.linkedin.com/in/shivampandey-tech/',
+      portfolio: 'https://shivam-pandey.com/',
     },
     {
-      name: 'Sid Miller',
-      role: 'Senior Developer',
-      email: 'sid.miller@rankriseusa.com',
-      phone: '+1 (555) 123-4568',
-      gradient: 'from-blue-400 to-purple-500',
-      social: { linkedin: '#', twitter: '#', email: 'sid.miller@rankriseusa.com' }
+      name: 'Vibhor',
+      role: 'Performance Marketing Specialist',
+      linkedin: 'https://www.linkedin.com/in/rankrise-usa-9b86a5425/',
     },
     {
-      name: 'Sarah Wilson',
-      role: 'Marketing Head',
-      email: 'sarah.wilson@rankriseusa.com',
-      phone: '+1 (555) 123-4569',
-      gradient: 'from-green-400 to-teal-500',
-      social: { linkedin: '#', twitter: '#', email: 'sarah.wilson@rankriseusa.com' }
+      name: 'Saumya',
+      role: 'SEO Specialist',
+      linkedin: 'https://www.linkedin.com/in/rankrise-usa-9b86a5425/',
     },
     {
-      name: 'Michael Brown',
-      role: 'Sales Director',
-      email: 'michael.brown@rankriseusa.com',
-      phone: '+1 (555) 123-4570',
-      gradient: 'from-pink-400 to-rose-500',
-      social: { linkedin: '#', twitter: '#', email: 'michael.brown@rankriseusa.com' }
+      name: 'Sid',
+      role: 'Sales Executive',
+      linkedin: 'https://www.linkedin.com/in/rankrise-usa-9b86a5425/',
     },
     {
-      name: 'Jessica Davis',
-      role: 'Project Manager',
-      email: 'jessica.davis@rankriseusa.com',
-      phone: '+1 (555) 123-4571',
-      gradient: 'from-cyan-400 to-blue-500',
-      social: { linkedin: '#', twitter: '#', email: 'jessica.davis@rankriseusa.com' }
+      name: 'Mike',
+      role: 'Sales Executive',
+      linkedin: 'https://www.linkedin.com/in/rankrise-usa-9b86a5425/',
     },
     {
-      name: 'David Johnson',
+      name: 'Meera',
+      role: 'Sales Executive',
+      linkedin: 'https://www.linkedin.com/in/rankrise-usa-9b86a5425/',
+    },
+    {
+      name: 'Luna',
       role: 'Business Development Executive',
-      email: 'david.johnson@rankriseusa.com',
-      phone: '+1 (555) 123-4572',
-      gradient: 'from-violet-400 to-purple-500',
-      social: { linkedin: '#', twitter: '#', email: 'david.johnson@rankriseusa.com' }
+      linkedin: 'https://www.linkedin.com/in/rankrise-usa-9b86a5425/',
+    },
+    {
+      name: 'Aady',
+      role: 'Client Relationship Executive',
+      linkedin: 'https://www.linkedin.com/in/rankrise-usa-9b86a5425/',
+    },
+    {
+      name: 'Vedant',
+      role: 'Finance Manager',
+      linkedin: 'https://www.linkedin.com/in/rankrise-usa-9b86a5425/',
+    },
+    {
+      name: 'Sam',
+      role: 'Operations Executive',
+      linkedin: 'https://www.linkedin.com/in/rankrise-usa-9b86a5425/',
     },
   ];
 
@@ -85,227 +88,191 @@ export default function Team() {
   };
 
   const maxIndex = Math.max(0, team.length - itemsPerView);
-  const slidePercentage = 100 / itemsPerView;
+
+  const cardWidthClasses = [
+    'w-full',
+    'sm:w-[calc(50%-12px)]',
+    'lg:w-[calc(33.333%-16px)]',
+    'xl:w-[calc(25%-18px)]',
+  ].join(' ');
 
   return (
-    <section className="py-12 md:py-16 lg:py-24 bg-gradient-to-b from-background via-background to-muted/20 relative overflow-hidden">
-      {/* Background Decorative Elements */}
-      <div className="absolute top-0 left-0 w-64 h-64 md:w-96 md:h-96 bg-primary/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 animate-pulse" />
-      <div className="absolute bottom-0 right-0 w-64 h-64 md:w-96 md:h-96 bg-purple-500/5 rounded-full blur-3xl translate-x-1/2 translate-y-1/2 animate-pulse" />
-      <div className="absolute top-1/2 left-1/2 w-48 h-48 md:w-72 md:h-72 bg-blue-500/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 animate-pulse delay-1000" />
-      
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section className="py-16 lg:py-20 bg-background relative overflow-hidden">
+      {/* Background Orbs */}
+      <div className="absolute top-1/4 -left-20 w-96 h-96 bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
+
+      <div className="container mx-auto px-4 relative z-10">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-12 md:mb-16 lg:mb-20"
-        >
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12 lg:mb-16">
+          <div className="max-w-3xl">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 mb-4"
+            >
+              <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+              <span className="text-primary text-[10px] font-black uppercase tracking-[0.2em]">Our Team</span>
+            </motion.div>
+
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-3xl sm:text-5xl lg:text-6xl font-black text-foreground mb-4 leading-[1.1]"
+            >
+              Meet Our <br />
+              <span className="text-gradient-gold italic">Team</span>
+            </motion.h2>
+          </div>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="inline-block mb-3 md:mb-4"
+            className="text-base sm:text-lg text-slate-200 lg:max-w-md leading-relaxed font-medium"
           >
-            <span className="px-4 py-2 rounded-full bg-gradient-to-r from-primary/10 to-purple-500/10 text-primary text-xs md:text-sm font-semibold border border-primary/20 backdrop-blur-sm">
-              ✨ Our Team
-            </span>
-          </motion.div>
-          
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 bg-gradient-to-r from-foreground via-foreground to-foreground/70 bg-clip-text text-transparent leading-tight">
-            Meet Our Experts
-          </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto text-sm sm:text-base md:text-lg leading-relaxed px-4">
-            Our dedicated team of professionals is committed to delivering exceptional service and driving your business growth.
-          </p>
-        </motion.div>
+            Leadership, development, marketing, sales, finance and operations professionals working together to deliver exceptional digital solutions.
+          </motion.p>
+        </div>
 
         {/* Team Carousel */}
         <div className="relative">
           <div className="overflow-hidden">
             <motion.div
-              className="flex gap-4 md:gap-6 lg:gap-8 px-2"
-              animate={{ x: `-${currentIndex * slidePercentage}%` }}
-              transition={{ duration: 0.7, ease: [0.32, 0.72, 0, 1] }}
+              className="flex gap-6 px-2"
+              animate={{ x: `-${currentIndex * (100 / itemsPerView)}%` }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             >
               {team.map((member, index) => (
-                <motion.div
-                  key={member.name}
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="flex-shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] xl:w-[calc(25%-18px)]"
+                <div
+                  key={index}
+                  className={`flex-shrink-0 ${cardWidthClasses}`}
                   onMouseEnter={() => setHoveredIndex(index)}
                   onMouseLeave={() => setHoveredIndex(null)}
                 >
-                  <motion.div 
-                    className="relative group cursor-pointer h-full"
-                    whileHover={{ y: -8 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    {/* Visiting Card */}
-                    <div className="relative bg-card rounded-2xl md:rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-border/50 backdrop-blur-sm h-full min-h-[320px] flex flex-col">
-                      {/* Gradient Background */}
-                      <div className={`absolute inset-0 bg-gradient-to-br ${member.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`} />
-                      
-                      {/* Shimmer Effect */}
-                      <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/5 to-transparent" />
-                      
-                      {/* Card Content */}
-                      <div className="relative p-6 md:p-8 flex flex-col h-full">
-                        {/* Logo Section */}
-                        <div className="flex justify-center mb-6">
-                          <div className="relative w-32 h-12">
-                            <img 
-                              src="/assets/images/logo.png" 
-                              alt="RankRise Logo" 
-                              className="w-full h-full object-contain"
-                            />
-                          </div>
+                  <div className="glass-card rounded-[2rem] p-6 sm:p-8 border-white/10 hover:border-primary/40 bg-[#080b11]/90 transition-all duration-500 group relative h-full flex flex-col justify-between shadow-xl">
+                    {/* Overlay gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-[2rem] pointer-events-none" />
+
+                    <div>
+                      {/* Header */}
+                      <div className="flex justify-between items-start mb-6 relative z-10">
+                        <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center shadow-inner">
+                          <img
+                            src="/assets/images/logo1.webp"
+                            width={28}
+                            height={28}
+                            loading="lazy"
+                            decoding="async"
+                            className="w-7 invert opacity-70"
+                            alt="RankRise USA Logo Icon"
+                          />
                         </div>
-
-                        {/* Member Info */}
-                        <div className="text-center space-y-4 flex-grow">
-                          <div>
-                            <h3 className="text-xl md:text-2xl font-bold text-foreground group-hover:bg-gradient-to-r group-hover:from-primary group-hover:to-purple-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300 mb-2">
-                              {member.name}
-                            </h3>
-                            <p className="text-sm md:text-base text-muted-foreground font-semibold bg-gradient-to-r from-primary/20 to-purple-500/20 py-1 px-3 rounded-full inline-block">
-                              {member.role}
-                            </p>
-                          </div>
-
-                          {/* Contact Information */}
-                          <div className="space-y-2 text-sm">
-                            <div className="flex items-center justify-center gap-2 text-muted-foreground">
-                              <Mail className="w-4 h-4" />
-                              <span className="break-all">{member.email}</span>
-                            </div>
-                            <div className="flex items-center justify-center gap-2 text-muted-foreground">
-                              <Phone className="w-4 h-4" />
-                              <span>{member.phone}</span>
-                            </div>
-                          </div>
+                        <div className="flex gap-2">
+                          {member.linkedin && (
+                            <a
+                              href={member.linkedin}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              aria-label={`${member.name} LinkedIn`}
+                              className="w-9 h-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-[#0a66c2] hover:bg-[#0a66c2]/20 hover:border-[#0a66c2]/50 hover:shadow-[0_0_15px_rgba(10,102,194,0.5)] transition-all"
+                            >
+                              <Linkedin className="w-4 h-4" />
+                            </a>
+                          )}
                         </div>
-
-                        {/* Social Icons */}
-                        <motion.div
-                          initial={{ opacity: 0, y: 10 }}
-                          animate={{ 
-                            opacity: hoveredIndex === index ? 1 : 0,
-                            y: hoveredIndex === index ? 0 : 10
-                          }}
-                          transition={{ duration: 0.3, delay: 0.1 }}
-                          className="flex justify-center gap-3 pt-4 mt-4 border-t border-border/50"
-                        >
-                          <motion.a 
-                            href={member.social.linkedin}
-                            whileHover={{ scale: 1.15, rotate: 5 }}
-                            whileTap={{ scale: 0.95 }}
-                            className={`w-8 h-8 md:w-9 md:h-9 rounded-full bg-gradient-to-br ${member.gradient} hover:shadow-lg flex items-center justify-center transition-all duration-300 group/icon`}
-                          >
-                            <Linkedin className="w-3.5 h-3.5 md:w-4 md:h-4 text-white" />
-                          </motion.a>
-                          <motion.a 
-                            href={member.social.twitter}
-                            whileHover={{ scale: 1.15, rotate: -5 }}
-                            whileTap={{ scale: 0.95 }}
-                            className={`w-8 h-8 md:w-9 md:h-9 rounded-full bg-gradient-to-br ${member.gradient} hover:shadow-lg flex items-center justify-center transition-all duration-300 group/icon`}
-                          >
-                            <Twitter className="w-3.5 h-3.5 md:w-4 md:h-4 text-white" />
-                          </motion.a>
-                          <motion.a 
-                            href={`mailto:${member.social.email}`}
-                            whileHover={{ scale: 1.15, rotate: 5 }}
-                            whileTap={{ scale: 0.95 }}
-                            className={`w-8 h-8 md:w-9 md:h-9 rounded-full bg-gradient-to-br ${member.gradient} hover:shadow-lg flex items-center justify-center transition-all duration-300 group/icon`}
-                          >
-                            <Mail className="w-3.5 h-3.5 md:w-4 md:h-4 text-white" />
-                          </motion.a>
-                        </motion.div>
                       </div>
 
-                      {/* Bottom Accent Line with Animation */}
-                      <div className="relative h-1 overflow-hidden">
-                        <motion.div 
-                          className={`h-full bg-gradient-to-r ${member.gradient}`}
-                          initial={{ x: "-100%" }}
-                          animate={{ x: hoveredIndex === index ? "0%" : "-100%" }}
-                          transition={{ duration: 0.5 }}
-                        />
+                      {/* Member Info */}
+                      <div className="space-y-1.5 relative z-10">
+                        <h3 className="text-xl font-black text-white group-hover:text-primary transition-colors">
+                          {member.name}
+                        </h3>
+                        <p className="text-[11px] font-bold uppercase tracking-wider text-primary">
+                          {member.role}
+                        </p>
                       </div>
                     </div>
-                  </motion.div>
-                </motion.div>
+
+                    {/* Action buttons / links */}
+                    <div className="mt-6 pt-5 border-t border-white/10 relative z-10 flex flex-col gap-2.5">
+                      {member.portfolio && (
+                        <a
+                          href={member.portfolio}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-full py-2 px-3 rounded-lg bg-primary/15 hover:bg-primary text-primary hover:text-black border border-primary/40 font-black text-[11px] uppercase tracking-wider flex items-center justify-center gap-1.5 transition-all shadow-md group/port"
+                        >
+                          <span>View Portfolio</span>
+                          <ExternalLink className="w-3 h-3 group-hover/port:translate-x-0.5 transition-transform" />
+                        </a>
+                      )}
+                      {member.linkedin && (
+                        <a
+                          href={member.linkedin}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-full py-1.5 px-3 rounded-lg bg-white/5 hover:bg-white/10 text-slate-200 hover:text-white border border-white/10 font-bold text-[10px] uppercase tracking-wider flex items-center justify-center gap-1.5 transition-all"
+                        >
+                          <Linkedin className="w-3 h-3 text-[#0a66c2]" />
+                          <span>Connect on LinkedIn</span>
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                </div>
               ))}
             </motion.div>
           </div>
+
+          {/* Controls */}
+          <div className="flex items-center justify-between mt-8 sm:mt-10 px-2">
+            <div className="flex gap-2">
+              {Array.from({ length: maxIndex + 1 }).map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setCurrentIndex(i)}
+                  className={`h-1 rounded-full transition-all duration-500 ${
+                    i === currentIndex ? 'w-10 bg-primary' : 'w-3 bg-white/10'
+                  }`}
+                />
+              ))}
+            </div>
+
+            <div className="flex gap-3">
+              <Button
+                variant="outline"
+                size="icon"
+                onClick={handlePrev}
+                disabled={currentIndex === 0}
+                className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl border-white/10 bg-white/5 hover:border-primary/50 text-foreground disabled:opacity-20"
+              >
+                <ChevronLeft className="w-5 h-5" />
+              </Button>
+              <Button
+                variant="outline"
+                size="icon"
+                onClick={handleNext}
+                disabled={currentIndex >= maxIndex}
+                className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl border-white/10 bg-white/5 hover:border-primary/50 text-foreground disabled:opacity-20"
+              >
+                <ChevronRight className="w-5 h-5" />
+              </Button>
+            </div>
+          </div>
         </div>
 
-        {/* Navigation Controls */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="flex justify-center items-center gap-4 md:gap-6 mt-10 md:mt-16"
-        >
-          <Button
-            variant="outline"
-            size="icon"
-            onClick={handlePrev}
-            disabled={currentIndex === 0}
-            className="w-12 h-12 md:w-14 md:h-14 rounded-full border-2 hover:bg-primary hover:text-white hover:border-primary hover:scale-110 disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:scale-100 transition-all duration-300 group shadow-md"
-          >
-            <ChevronLeft className="w-4 h-4 md:w-5 md:h-5 group-hover:scale-110 transition-transform" />
-          </Button>
-
-          {/* Pagination Dots */}
-          <div className="flex gap-1.5 md:gap-2">
-            {Array.from({ length: maxIndex + 1 }).map((_, index) => (
-              <motion.button
-                key={index}
-                onClick={() => setCurrentIndex(index)}
-                className="relative"
-                whileHover={{ scale: 1.2 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                <div className={`h-1.5 md:h-2 rounded-full transition-all duration-300 ${
-                  index === currentIndex
-                    ? 'w-8 md:w-10 bg-gradient-to-r from-primary to-purple-500'
-                    : 'w-1.5 md:w-2 bg-muted-foreground/30 hover:bg-muted-foreground/50'
-                }`} />
-              </motion.button>
-            ))}
-          </div>
-
-          <Button
-            variant="outline"
-            size="icon"
-            onClick={handleNext}
-            disabled={currentIndex >= maxIndex}
-            className="w-12 h-12 md:w-14 md:h-14 rounded-full border-2 hover:bg-primary hover:text-white hover:border-primary hover:scale-110 disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:scale-100 transition-all duration-300 group shadow-md"
-          >
-            <ChevronRight className="w-4 h-4 md:w-5 md:h-5 group-hover:scale-110 transition-transform" />
-          </Button>
-        </motion.div>
-
-        {/* View All Button */}
+        {/* Footer CTA */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="flex justify-center mt-8 md:mt-12"
+          className="mt-14 sm:mt-16 flex justify-center"
         >
-          <Button 
-            className="px-6 md:px-8 py-4 md:py-6 rounded-full bg-gradient-to-r from-primary to-purple-500 hover:shadow-lg hover:scale-105 transition-all duration-300 text-sm md:text-base font-semibold"
-          >
-            View All Team Members
+          <Button className="h-11 sm:h-12 px-6 sm:px-8 rounded-full text-xs font-black uppercase tracking-widest button-premium mx-auto">
+            Join Our Neural Network
           </Button>
         </motion.div>
       </div>

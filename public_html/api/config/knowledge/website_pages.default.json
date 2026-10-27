@@ -1,0 +1,122 @@
+[
+  {
+    "id": "page-home",
+    "title": "Home — RankRise USA",
+    "url": "/",
+    "section": "home",
+    "keywords": ["home", "rankrise", "digital agency", "growth", "seo agency", "marketing agency"],
+    "content": "RankRise USA is a digital growth agency helping businesses grow with SEO, digital marketing, web development, app development, branding, and AI automation. Explore Services, Pricing, Portfolio, Courses, Blog, and Contact for details."
+  },
+  {
+    "id": "page-services",
+    "title": "Services",
+    "url": "/services",
+    "section": "services",
+    "keywords": ["services", "seo", "smo", "ppc", "web development", "app development", "branding", "automation"],
+    "content": "RankRise USA provides SEO (including Local SEO, Technical SEO, Enterprise SEO), SMO, PPC and Meta Ads, ORM, Web Development, App Development, Custom Software (CRM/LMS/ERP), AI Automation, Branding & Graphic Design, and Hosting & Security. Visit /services for the full list."
+  },
+  {
+    "id": "page-pricing",
+    "title": "Pricing",
+    "url": "/pricing",
+    "section": "pricing",
+    "keywords": ["pricing", "packages", "cost", "plans", "quote"],
+    "content": "Pricing depends on service and scope. SEO, SMO, ORM, Web Development, Hosting, and Maintenance packages are listed on /pricing. Request a custom quote via Contact or email sam@RankRiseUSA.com."
+  },
+  {
+    "id": "page-portfolio",
+    "title": "Portfolio",
+    "url": "/portfolio",
+    "section": "portfolio",
+    "keywords": ["portfolio", "projects", "work", "case studies", "clients"],
+    "content": "Our Portfolio showcases websites, apps, SEO, and branding projects delivered for clients across industries. Visit /portfolio to browse recent work."
+  },
+  {
+    "id": "page-courses",
+    "title": "Courses",
+    "url": "/courses",
+    "section": "courses",
+    "keywords": ["courses", "training", "internship", "learn", "education"],
+    "content": "RankRise USA offers practical digital skills training and internship-oriented learning. Visit /courses for available programs."
+  },
+  {
+    "id": "page-about",
+    "title": "About",
+    "url": "/about",
+    "section": "about",
+    "keywords": ["about", "company", "team", "who we are"],
+    "content": "RankRise USA is headquartered in Washington, DC, with an India office in Noida. We help businesses grow through SEO, marketing, development, branding, and automation. Learn more at /about."
+  },
+  {
+    "id": "page-contact",
+    "title": "Contact",
+    "url": "/contact",
+    "section": "contact",
+    "keywords": ["contact", "phone", "email", "address", "support", "sales"],
+    "content": "Contact RankRise USA:\nUS: sam@RankRiseUSA.com | +1 (202) 888-2806 | 4315 50th Street NW, Suite 100, Washington DC\nIndia: +91 75650 31848 | B7 Sector 2, Noida\nContact page: /contact"
+  },
+  {
+    "id": "page-blog",
+    "title": "Blog / Intelligence Hub",
+    "url": "/blog",
+    "section": "blog",
+    "keywords": ["blog", "insights", "articles", "intelligence hub"],
+    "content": "The RankRise USA Intelligence Hub publishes articles on SEO, growth, conversion, and digital strategy. Visit /blog for the latest posts."
+  },
+  {
+    "id": "page-privacy",
+    "title": "Privacy Policy",
+    "url": "/privacy-policy",
+    "section": "policies",
+    "keywords": ["privacy", "privacy policy", "data protection"],
+    "content": "Our Privacy Policy explains how we handle personal data. Full details: /privacy-policy. Questions: sam@RankRiseUSA.com."
+  },
+  {
+    "id": "page-terms",
+    "title": "Terms and Conditions",
+    "url": "/terms-and-conditions",
+    "section": "policies",
+    "keywords": ["terms", "terms and conditions", "legal"],
+    "content": "Terms & Conditions governing use of RankRise USA services are at /terms-and-conditions."
+  },
+  {
+    "id": "page-refund",
+    "title": "Refund and Cancellation",
+    "url": "/refund-cancellation",
+    "section": "policies",
+    "keywords": ["refund", "cancellation", "cancel"],
+    "content": "Refund and cancellation terms depend on the service agreement. Details: /refund-cancellation. Billing: sam@RankRiseUSA.com | +1 (202) 888-2806."
+  },
+  {
+    "id": "page-disclaimer",
+    "title": "Disclaimer",
+    "url": "/disclaimer",
+    "section": "policies",
+    "keywords": ["disclaimer"],
+    "content": "Legal disclaimer for RankRise USA website content: /disclaimer."
+  },
+  {
+    "id": "page-cookies",
+    "title": "Cookies Policy",
+    "url": "/cookies-policy",
+    "section": "policies",
+    "keywords": ["cookies", "cookie policy"],
+    "content": "How we use cookies is described at /cookies-policy."
+  },
+  {
+    "id": "page-free-audit",
+    "title": "Free Audit",
+    "url": "/free-audit",
+    "section": "services",
+    "keywords": ["free audit", "website audit", "seo audit"],
+    "content": "Request a free website / SEO audit via /free-audit or Contact. Our team reviews visibility opportunities and follows up."
+  },
+  {
+    "id": "page-custom-plan",
+    "title": "Custom Plan",
+    "url": "/custom-plan",
+    "section": "pricing",
+    "keywords": ["custom plan", "custom quote", "enterprise plan"],
+    "content": "Need a tailored package? Use /custom-plan or contact sam@RankRiseUSA.com | +1 (202) 888-2806."
+  }
+]

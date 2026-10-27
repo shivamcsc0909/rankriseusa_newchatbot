@@ -1,384 +1,282 @@
 import { motion } from 'framer-motion';
-import { Search, Share2, Code, Brain, Megaphone, BarChart3, CheckCircle, ArrowRight, Rocket, Target, Zap, Users, TrendingUp, Shield, Sparkles, Star, PenTool, Smartphone } from 'lucide-react';
+import { Search, Share2, Code, Brain, Megaphone, BarChart3, CheckCircle, ArrowRight, Rocket, Target, Zap, Users, TrendingUp, Shield, Sparkles, Star, PenTool, Smartphone, Globe, Lock, Cpu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import Seo from '@/components/seo';
 
 export default function ServicesPage() {
   const services = [
     {
       icon: Search,
-      title: 'SEO Services',
-      definition: 'Search Engine Optimization (SEO) is the art and science of optimizing your website to rank higher on search engines like Google, driving organic traffic and increasing visibility.',
+      title: 'SEO Intelligence',
+      definition: 'Surgical Search Engine Optimization engineered to dominate algorithmic landscape and capture high-intent traffic.',
       benefits: [
-        'Rank on first page for high-value keywords',
-        'Increase qualified organic traffic by 300%+',
-        'Build sustainable long-term growth',
-        'Outrank competitors consistently'
+        'Rank #1 for high-value transactional keywords',
+        '300% surge in qualified organic volume',
+        'Sustainable market authority architecture',
+        'Algorithmic moat against competitors'
       ],
-      whyChooseUs: 'We use proprietary ranking algorithms and white-hat techniques that have helped clients achieve #1 rankings in competitive niches. Our data-driven approach ensures every optimization drives real business results.',
-      color: 'from-blue-500 to-cyan-500',
+      whyChooseUs: 'Our proprietary GEO (Generative Engine Optimization) protocols go beyond basic SEO, positioning your brand as the primary authority for both traditional and AI-driven search engines.',
       price: 'From $2,999/mo',
-      results: '+350% Traffic',
-      cta: 'Get SEO That Ranks'
+      results: '+350% Growth',
+      cta: 'Initialize SEO Protocol'
     },
     {
       icon: Share2,
-      title: 'Social Media Marketing (SMM)',
-      definition: 'Strategic social media management that transforms your profiles into powerful revenue-generating channels through engaging content and targeted audience growth.',
+      title: 'Social Amplification',
+      definition: 'Viral framework architecture that transforms brand presence into a high-frequency lead generation machine.',
       benefits: [
-        'Grow engaged followers rapidly',
-        'Generate consistent leads and sales',
-        'Build brand authority and trust',
-        'Drive website traffic from social platforms'
+        'Rapid targeted audience acquisition',
+        'High-conversion content ecosystem',
+        'Brand sentiment optimization',
+        'Multi-platform visibility dominance'
       ],
-      whyChooseUs: 'Our viral content frameworks and community-building strategies have helped brands gain 200K+ followers in months. We create content that people actually want to share and engage with.',
-      color: 'from-purple-500 to-pink-500',
+      whyChooseUs: 'We architect viral loops and community structures that don\'t just gather followers—they build a legion of brand advocates and high-LTV customers.',
       price: 'From $1,999/mo',
-      results: '200K Followers',
-      cta: 'Go Viral Now'
-    },
-    {
-      icon: Megaphone,
-      title: 'Social Media Optimization (SMO)',
-      definition: 'Optimizing your social media presence across all platforms to maximize visibility, engagement, and conversion rates through strategic profile enhancements.',
-      benefits: [
-        'Optimize profiles for maximum reach',
-        'Increase engagement rates significantly',
-        'Improve brand consistency across platforms',
-        'Enhance social media conversion rates'
-      ],
-      whyChooseUs: 'We go beyond basic posting - we optimize every element of your social presence from bios to visuals, ensuring you get the maximum ROI from your social media efforts.',
-      color: 'from-indigo-500 to-blue-500',
-      price: 'From $1,499/mo',
-      results: '3x Engagement',
-      cta: 'Optimize Profiles'
+      results: '200K+ Reach',
+      cta: 'Deploy Social Strategy'
     },
     {
       icon: TrendingUp,
-      title: 'PPC Advertising',
-      definition: 'Pay-Per-Click advertising that puts your business in front of ready-to-buy customers through strategic ad placements on Google, social media, and other platforms.',
+      title: 'PPC Performance',
+      definition: 'Data-driven paid acquisition systems focused on surgical ROI and immediate market penetration.',
       benefits: [
-        'Get immediate targeted traffic',
-        'Pay only for actual results',
-        'Scale profitable campaigns rapidly',
-        'Reach high-intent buyers instantly'
+        'Instant high-intent traffic injection',
+        'Precision conversion tracking',
+        'Aggressive ROAS optimization',
+        'Scalable revenue architecture'
       ],
-      whyChooseUs: 'Our PPC experts have generated over $50M in client revenue through meticulously optimized campaigns. We focus on ROI, not just clicks, ensuring every dollar spent drives revenue.',
-      color: 'from-green-500 to-emerald-500',
+      whyChooseUs: 'Our performance engineers have managed $50M+ in spend with an average 5x ROAS. We optimize for profit, not just clicks.',
       price: 'From $2,499/mo',
-      results: '5x ROAS',
-      cta: 'Launch Campaign'
-    },
-    {
-      icon: PenTool,
-      title: 'Content Writing',
-      definition: 'Strategic content creation that engages your audience, builds authority, and drives conversions through compelling copy and SEO-optimized writing.',
-      benefits: [
-        'Establish thought leadership',
-        'Improve SEO rankings with quality content',
-        'Engage and convert visitors',
-        'Build trust with your audience'
-      ],
-      whyChooseUs: 'Our writers are conversion experts who understand both SEO and human psychology. We create content that ranks, engages, and converts - not just fills pages.',
-      color: 'from-orange-500 to-red-500',
-      price: 'From $1,199/mo',
-      results: '300% More Conversions',
-      cta: 'Get Quality Content'
-    },
-    {
-      icon: Code,
-      title: 'Web Development',
-      definition: 'Building high-converting, lightning-fast websites that provide exceptional user experiences and drive business growth through superior technical execution.',
-      benefits: [
-        'Lightning fast load times (<2 seconds)',
-        'Mobile-optimized responsive design',
-        'Higher conversion rates (15%+)',
-        'Scalable and secure architecture'
-      ],
-      whyChooseUs: 'We build websites that actually make money. Our development focus is on performance, conversion optimization, and user experience - not just pretty designs.',
-      color: 'from-yellow-500 to-amber-500',
-      price: 'From $7,999',
-      results: '15% Conversion',
-      cta: 'Build Your Site'
-    },
-    {
-      icon: Smartphone,
-      title: 'App Development',
-      definition: 'Creating powerful, user-friendly mobile applications that solve real business problems and provide exceptional value to your customers.',
-      benefits: [
-        'Reach customers on mobile devices',
-        'Provide seamless user experiences',
-        'Increase customer engagement',
-        'Generate additional revenue streams'
-      ],
-      whyChooseUs: 'Our app development team combines cutting-edge technology with user-centric design to create apps that people love to use and that drive real business results.',
-      color: 'from-pink-500 to-rose-500',
-      price: 'From $12,999',
-      results: '4.8 Star Ratings',
-      cta: 'Develop Your App'
+      results: '5x Avg ROAS',
+      cta: 'Scale Your Ads'
     },
     {
       icon: Brain,
-      title: 'AI Solutions',
-      definition: 'Implementing artificial intelligence and automation to streamline operations, enhance customer experiences, and drive efficiency across your business.',
+      title: 'AI & Automation',
+      definition: 'Custom neural networks and automated workflows that streamline operations and enhance customer intelligence.',
       benefits: [
-        'Automate repetitive tasks',
-        'Provide 24/7 customer support',
-        'Gain data-driven insights',
-        'Improve operational efficiency'
+        'Autonomous customer interaction',
+        'Predictive growth modeling',
+        'Operational overhead reduction',
+        'Real-time data synthesis'
       ],
-      whyChooseUs: 'We build practical AI solutions that deliver immediate value. From chatbots to predictive analytics, we implement AI that works and scales with your business.',
-      color: 'from-teal-500 to-cyan-500',
+      whyChooseUs: 'We implement practical AI that solves real business friction. From custom LLM agents to predictive analytics, we build the future of your operations.',
       price: 'From $4,999',
-      results: '$400K Saved',
-      cta: 'Automate Now'
+      results: '$400K+ Saved',
+      cta: 'Automate Command'
+    },
+    {
+      icon: Code,
+      title: 'Neural Web Dev',
+      definition: 'Ultra-performance web architecture built for speed, security, and maximum conversion psychology.',
+      benefits: [
+        'Sub-1s global load velocity',
+        'Conversion-optimized UX/UI',
+        'Headless CMS infrastructure',
+        'Unbreakable security protocols'
+      ],
+      whyChooseUs: 'We build digital headquarters that convert at 15%+. Our sites are engineered to be your highest-performing salesperson.',
+      price: 'From $7,999',
+      results: '15%+ Conversion',
+      cta: 'Architect Your Site'
+    },
+    {
+      icon: Cpu,
+      title: 'App Ecosystems',
+      definition: 'Powerful mobile experiences designed to integrate seamlessly into your customers\' digital lives.',
+      benefits: [
+        'High-retention mobile experiences',
+        'Native performance architecture',
+        'Engagement-driven features',
+        'Scalable backend systems'
+      ],
+      whyChooseUs: 'We build apps that people love to use. Our focus is on frictionless utility and psychological engagement loops.',
+      price: 'From $12,999',
+      results: '4.8+ Star Rating',
+      cta: 'Develop Mobile Asset'
     }
   ];
 
   const process = [
-    { 
-      step: '01', 
-      title: 'Strategy Call', 
-      description: 'Free 30-min call to understand your goals and challenges',
+    {
+      step: '01',
+      title: 'Intelligence Sync',
+      desc: 'Deep-dive audit of your current digital architecture and market positioning.',
       icon: Target,
       time: '30 mins'
     },
-    { 
-      step: '02', 
-      title: 'Custom Proposal', 
-      description: 'Detailed plan with timelines, deliverables, and pricing',
+    {
+      step: '02',
+      title: 'Strategic Blueprint',
+      desc: 'Custom engineered growth map with clear milestones and ROI projections.',
       icon: Rocket,
-      time: '2-3 days'
+      time: '48 Hours'
     },
-    { 
-      step: '03', 
-      title: 'Execution', 
-      description: 'We build, launch, and iterate based on real data',
+    {
+      step: '03',
+      title: 'Tactical Deployment',
+      desc: 'Rapid execution phase where we build and launch your growth assets.',
       icon: Zap,
-      time: '2-12 weeks'
+      time: '2-8 Weeks'
     },
-    { 
-      step: '04', 
-      title: 'Scale & Optimize', 
-      description: 'Continuous improvement and monthly performance reports',
+    {
+      step: '04',
+      title: 'Continuous Scaling',
+      desc: 'Real-time optimization and iterative scaling to maximize market share.',
       icon: TrendingUp,
       time: 'Ongoing'
     },
   ];
 
   const stats = [
-    { number: '500+', label: 'Projects Delivered', icon: Rocket },
-    { number: '98%', label: 'Happy Clients', icon: Star },
-    { number: '5x', label: 'Average ROI', icon: TrendingUp },
-    { number: '<24hrs', label: 'Response Time', icon: Zap },
+    { number: '500+', label: 'Engines Shipped', icon: Rocket },
+    { number: '98%', label: 'Partner Retention', icon: Star },
+    { number: '5x', label: 'Median ROI', icon: TrendingUp },
+    { number: '<1hr', label: 'Response Velocity', icon: Zap },
   ];
 
   const faqs = [
     {
-      q: 'How fast can I see real results?',
-      a: 'Paid ads: First sales in 7-14 days. SEO: Page 1 rankings in 60-90 days. Web dev: Launch your site in 3-6 weeks. We move fast because your time = money.'
+      q: 'How rapid is the result velocity?',
+      a: 'PPC generates traffic in <48hrs. SEO benchmarks usually show significant movement in 60-90 days. We optimize for immediate quick-wins while building long-term dominance.'
     },
     {
-      q: 'What if I\'m a small startup with limited budget?',
-      a: 'Perfect. 70% of our clients started with <$5K/month budgets. We offer payment plans, milestone-based pricing, and rev-share deals for the right partners.'
+      q: 'Do you work with early-stage ventures?',
+      a: 'Yes. 70% of our partners started as agile startups. We provide the technical leverage needed to out-compete established giants.'
     },
     {
-      q: 'Why should I choose you over Fiverr or hiring in-house?',
-      a: 'Fiverr = amateur work, in-house = expensive + slow. We\'re your dedicated growth team for 1/3 the cost of one senior hire. Plus you get our entire playbook that\'s made clients millions.'
-    },
-    {
-      q: 'Do you guarantee results?',
-      a: 'Yes. If we don\'t hit agreed milestones in 90 days, you get next month free. We put our money where our mouth is because we know we deliver.'
+      q: 'What is your performance guarantee?',
+      a: 'If we don\'t hit agreed-upon milestones within 90 days, we work at zero cost until we do. We share the risk because we believe in our protocol.'
     },
   ];
 
   return (
-    <div className="pt-20">
+    <div className="bg-background min-h-screen">
+      <Seo
+        title="Enterprise Digital Growth & AI SEO Services | RankRise USA"
+        description="Explore RankRise USA's full-suite digital solutions: AI search engine optimization, modern web development, PPC ad management, and conversion growth."
+        canonical="https://rankriseusa.com/services"
+        keywords={[
+          "seo services usa",
+          "ai seo agency",
+          "web development services",
+          "ppc management agency",
+          "digital marketing solutions",
+          "search engine optimization company",
+          "custom software engineering"
+        ]}
+        breadcrumbs={[
+          { position: 1, name: "Home", item: "https://rankriseusa.com/" },
+          { position: 2, name: "Services", item: "https://rankriseusa.com/services" }
+        ]}
+      />
       {/* Hero Section */}
-      <section className="py-20 sm:py-28 bg-gradient-to-br from-purple-50 via-white to-blue-50 relative overflow-hidden">
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <motion.div
-            className="absolute top-20 right-10 w-96 h-96 bg-purple-200/30 rounded-full blur-3xl"
-            animate={{ scale: [1, 1.2, 1], x: [0, -30, 0] }}
-            transition={{ duration: 15, repeat: Infinity }}
-          />
-          <motion.div
-            className="absolute bottom-20 left-10 w-80 h-80 bg-blue-200/30 rounded-full blur-3xl"
-            animate={{ scale: [1.2, 1, 1.2], x: [0, 30, 0] }}
-            transition={{ duration: 12, repeat: Infinity }}
-          />
-        </div>
+      <section className="relative pt-24 sm:pt-28 lg:pt-32 pb-14 sm:pb-20 overflow-hidden">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-primary/5 blur-[120px] rounded-full pointer-events-none" />
 
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="container mx-auto px-4 relative z-10 text-center">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center max-w-4xl mx-auto"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 mb-6"
           >
-            <motion.div
-              initial={{ scale: 0 }}
-              animate={{ scale: 1 }}
-              transition={{ type: "spring", delay: 0.2 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-purple-100 to-blue-100 mb-6"
-            >
-              <Sparkles className="w-4 h-4 text-purple-600" />
-              <span className="text-sm font-bold text-purple-800">Premium Digital Services</span>
-            </motion.div>
-
-            <h1 className="text-4xl sm:text-5xl md:text-7xl font-black mb-6 leading-tight text-gray-900">
-              Digital Services That{' '}
-              <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent">
-                Drive Real Results
-              </span>
-            </h1>
-
-            <p className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed max-w-3xl mx-auto">
-              From SEO that ranks #1 to websites that convert at 15%+. Every service is designed to grow your business and maximize ROI.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Link to="/contact">
-                  <Button size="lg" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-6 text-base font-semibold shadow-xl">
-                    Book Free Strategy Call
-                    <ArrowRight className="ml-2 w-5 h-5" />
-                  </Button>
-                </Link>
-              </motion.div>
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Link to="/pricing">
-                  <Button size="lg" variant="outline" className="border-2 border-purple-600 text-purple-600 hover:bg-purple-50 px-8 py-6 text-base font-semibold">
-                    View Pricing
-                  </Button>
-                </Link>
-              </motion.div>
-            </div>
+            <Sparkles className="w-4 h-4 text-primary" />
+            <span className="text-primary text-[10px] font-black uppercase tracking-[0.25em]">Premium Intelligence Protocols</span>
           </motion.div>
+
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-foreground leading-[1.05] tracking-tight mb-6 break-words">
+            Enterprise AI SEO &amp; <br />
+            <span className="text-gradient-gold italic">Digital Growth Services in the USA</span>
+          </h1>
+
+          <p className="text-base sm:text-lg lg:text-xl text-muted-foreground font-medium leading-relaxed max-w-3xl mx-auto mb-8 sm:mb-10">
+            From Generative Engine Optimization (GEO) to custom high-converting web architecture. Every service is precision-engineered to capture market share and drive revenue.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link to="/contact">
+              <Button className="h-12 sm:h-14 px-8 rounded-xl sm:rounded-2xl button-premium font-black uppercase tracking-widest text-xs sm:text-sm group">
+                Request Protocol Sync
+                <ArrowRight className="ml-2.5 w-4 h-4 group-hover:translate-x-1.5 transition-transform" />
+              </Button>
+            </Link>
+            <Link to="/pricing">
+              <Button variant="outline" className="h-12 sm:h-14 px-8 rounded-xl sm:rounded-2xl border-white/10 hover:border-primary/50 text-foreground font-black uppercase tracking-widest text-xs sm:text-sm">
+                View Investment Tiers
+              </Button>
+            </Link>
+          </div>
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-16 bg-white border-y border-gray-200">
+      {/* Stats Dashboard */}
+      <section className="py-20 bg-white/5 border-y border-white/5">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
-            {stats.map((stat, index) => (
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 max-w-5xl mx-auto">
+            {stats.map((stat, i) => (
               <motion.div
-                key={stat.label}
+                key={i}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
                 className="text-center"
               >
-                <div className="w-12 h-12 mx-auto mb-3 bg-gradient-to-br from-purple-100 to-blue-100 rounded-xl flex items-center justify-center">
-                  <stat.icon className="w-6 h-6 text-purple-600" />
+                <div className="w-12 h-12 mx-auto mb-6 bg-primary/10 rounded-xl flex items-center justify-center border border-primary/20 shadow-[0_0_15px_rgba(255,215,0,0.1)]">
+                  <stat.icon className="w-6 h-6 text-primary" />
                 </div>
-                <div className="text-3xl sm:text-4xl font-black bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-2">
-                  {stat.number}
-                </div>
-                <div className="text-sm text-gray-600 font-medium">{stat.label}</div>
+                <div className="text-4xl font-black text-foreground mb-2 leading-none">{stat.number}</div>
+                <div className="text-[10px] font-black uppercase tracking-widest text-muted-foreground">{stat.label}</div>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Services Grid - Restructured */}
-      <section className="py-20 bg-white">
+      {/* Service Core */}
+      <section className="py-32 relative">
         <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl sm:text-5xl font-black mb-4 text-gray-900">
-              Our Digital <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Services</span>
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Comprehensive solutions designed to scale your business and drive measurable results
-            </p>
-          </motion.div>
-
-          <div className="max-w-6xl mx-auto">
-            {services.map((service, index) => (
+          <div className="grid lg:grid-cols-2 gap-12 max-w-7xl mx-auto">
+            {services.map((service, i) => (
               <motion.div
-                key={service.title}
-                initial={{ opacity: 0, y: 50 }}
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className={`mb-16 bg-gradient-to-r ${service.color} rounded-2xl overflow-hidden shadow-2xl`}
+                className="glass-card p-1 rounded-[3rem] border-white/5 hover:border-primary/30 transition-all overflow-hidden"
               >
-                <div className="bg-white p-8 md:p-12 rounded-2xl m-1">
-                  <div className="grid md:grid-cols-3 gap-8 items-start">
-                    {/* Left Column - Service Overview */}
-                    <div className="md:col-span-2">
-                      <div className="flex items-center gap-4 mb-6">
-                        <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center shadow-lg`}>
-                          <service.icon className="w-7 h-7 text-white" />
-                        </div>
-                        <h3 className="text-3xl font-bold text-gray-900">{service.title}</h3>
+                <div className="bg-[#05070a]/80 backdrop-blur-3xl p-10 h-full rounded-[2.8rem] flex flex-col justify-between">
+                  <div>
+                    <div className="flex items-center gap-6 mb-8">
+                      <div className="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center shadow-lg">
+                        <service.icon className="w-8 h-8 text-primary" />
                       </div>
-
-                      {/* Service Definition */}
-                      <div className="mb-6">
-                        <h4 className="text-lg font-semibold text-gray-800 mb-3">What is {service.title}?</h4>
-                        <p className="text-gray-600 leading-relaxed">{service.definition}</p>
-                      </div>
-
-                      {/* Benefits Section */}
-                      <div className="mb-6">
-                        <h4 className="text-lg font-semibold text-gray-800 mb-3">How It Helps Your Business:</h4>
-                        <ul className="grid sm:grid-cols-2 gap-3">
-                          {service.benefits.map((benefit, idx) => (
-                            <li key={idx} className="flex items-start gap-3 text-gray-700">
-                              <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                              <span className="text-sm">{benefit}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      {/* Why Choose Rankrise */}
-                      <div className="mb-6">
-                        <h4 className="text-lg font-semibold text-gray-800 mb-3">Why Choose Rankrise for {service.title}:</h4>
-                        <p className="text-gray-600 text-sm leading-relaxed">{service.whyChooseUs}</p>
-                      </div>
+                      <h3 className="text-3xl font-black text-foreground leading-none">{service.title}</h3>
                     </div>
 
-                    {/* Right Column - Pricing & CTA */}
-                    <div className="bg-gray-50 rounded-xl p-6 border border-gray-200">
-                      <div className="text-center mb-6">
-                        <p className="text-sm text-gray-500 mb-1">Starting at</p>
-                        <p className="text-2xl font-bold text-gray-900">{service.price}</p>
-                        <div className={`mt-2 px-4 py-1 rounded-full bg-gradient-to-r ${service.color} bg-opacity-10 text-sm font-bold text-gray-800`}>
-                          {service.results}
-                        </div>
-                      </div>
+                    <p className="text-muted-foreground font-bold mb-10 leading-relaxed">
+                      {service.definition}
+                    </p>
 
-                      <div className="space-y-4">
-                        <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                          <Button className={`w-full bg-gradient-to-r ${service.color} hover:opacity-90 text-white font-semibold py-3`}>
-                            {service.cta}
-                          </Button>
-                        </motion.div>
-                        
-                        <div className="text-center">
-                          <Link to="/contact" className="text-sm text-gray-600 hover:text-gray-800 underline">
-                            Schedule Free Consultation
-                          </Link>
+                    <div className="space-y-4 mb-12">
+                      {service.benefits.map((benefit, idx) => (
+                        <div key={idx} className="flex items-start gap-4">
+                          <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                          <span className="text-foreground font-bold text-sm">{benefit}</span>
                         </div>
-                      </div>
-
-                      <div className="mt-6 pt-6 border-t border-gray-200">
-                        <div className="flex items-center justify-center gap-2 text-sm text-gray-500">
-                          <CheckCircle className="w-4 h-4 text-green-500" />
-                          <span>30-day results guarantee</span>
-                        </div>
-                      </div>
+                      ))}
                     </div>
+                  </div>
+
+                  <div className="pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-8">
+                    <div>
+                      <div className="text-[10px] font-black uppercase tracking-widest text-muted-foreground mb-1">Target Yield</div>
+                      <div className="text-2xl font-black text-primary">{service.results}</div>
+                    </div>
+                    <Link to="/contact">
+                      <Button className="h-14 px-8 rounded-xl bg-white/5 hover:bg-primary hover:text-background border border-white/10 text-foreground font-black uppercase tracking-widest text-xs transition-all flex items-center gap-2">
+                        {service.cta}
+                        <ArrowRight className="w-4 h-4" />
+                      </Button>
+                    </Link>
                   </div>
                 </div>
               </motion.div>
@@ -387,116 +285,102 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Process Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl sm:text-5xl font-black mb-4 text-gray-900">
-              How We <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Work</span>
+      {/* The Protocol (Process) */}
+      <section className="py-32 bg-white/5 relative overflow-hidden">
+        <div className="absolute inset-0 bg-primary/5 blur-[120px] rounded-full -translate-x-1/2 pointer-events-none" />
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center mb-24">
+            <h2 className="text-4xl md:text-6xl font-black text-foreground mb-6">
+              The Rankriseusa <span className="text-gradient-gold italic">Protocol.</span>
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Simple, transparent process. No hidden fees, no surprises.
-            </p>
-          </motion.div>
+            <p className="text-xl text-muted-foreground font-bold">Execution with mathematical precision.</p>
+          </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-            {process.map((item, index) => (
-              <motion.div
-                key={item.step}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="relative text-center"
-              >
-                <div className="bg-gradient-to-br from-purple-600 to-pink-600 w-16 h-16 rounded-2xl mx-auto mb-4 flex items-center justify-center shadow-lg">
-                  <item.icon className="w-8 h-8 text-white" />
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+            {process.map((item, i) => (
+              <div key={i} className="text-center group">
+                <div className="w-20 h-20 rounded-[2rem] bg-primary/10 border border-primary/20 flex items-center justify-center mx-auto mb-8 shadow-xl group-hover:scale-110 transition-transform">
+                  <item.icon className="w-10 h-10 text-primary" />
                 </div>
-                <div className="text-sm font-bold text-purple-600 mb-2">{item.step}</div>
-                <h3 className="text-xl font-bold mb-2 text-gray-900">{item.title}</h3>
-                <p className="text-gray-600 text-sm mb-2 leading-relaxed">{item.description}</p>
-                <div className="text-xs text-gray-500 font-semibold">{item.time}</div>
-              </motion.div>
+                <div className="text-primary text-xs font-black mb-2 uppercase tracking-[0.3em]">{item.step}</div>
+                <h3 className="text-2xl font-black text-foreground mb-3">{item.title}</h3>
+                <p className="text-muted-foreground font-bold text-sm leading-relaxed mb-4">{item.desc}</p>
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-black text-primary">
+                  <Star className="w-3 h-3" />
+                  {item.time}
+                </div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4 max-w-3xl">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-4xl font-black mb-4 text-gray-900">Quick Answers</h2>
-          </motion.div>
+      {/* Intelligence FAQ */}
+      <section id="faq" className="py-16 sm:py-20">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl font-black text-foreground mb-3">Neural <span className="text-gradient-gold">Sync.</span></h2>
+            <p className="text-muted-foreground font-bold text-sm sm:text-base italic">Quick answers for high-speed decision making.</p>
+          </div>
 
-          <div className="space-y-4">
-            {faqs.map((faq, index) => (
+          <div className="space-y-4 mb-10">
+            {faqs.map((faq, i) => (
               <motion.div
-                key={index}
+                key={i}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm"
+                className="glass-card p-6 sm:p-8 rounded-2xl sm:rounded-3xl border-white/5 hover:border-primary/20 transition-all"
               >
-                <h3 className="font-bold text-lg text-gray-900 mb-2">{faq.q}</h3>
-                <p className="text-gray-600">{faq.a}</p>
+                <h3 className="text-lg sm:text-xl font-black text-foreground mb-3 flex items-center gap-3">
+                  <div className="w-2 h-2 rounded-full bg-primary shrink-0" />
+                  {faq.q}
+                </h3>
+                <p className="text-muted-foreground font-medium text-sm sm:text-base pl-5 border-l border-white/10 leading-relaxed">{faq.a}</p>
               </motion.div>
             ))}
+          </div>
+
+          <div className="p-6 sm:p-8 rounded-2xl bg-white/[0.03] border border-primary/20 text-center flex flex-col sm:flex-row items-center justify-between gap-5">
+            <div className="text-left">
+              <h4 className="text-lg sm:text-xl font-black text-white mb-1">Looking for More Detailed Answers?</h4>
+              <p className="text-xs sm:text-sm text-muted-foreground font-medium">Check out our complete agency FAQ knowledge base on our homepage.</p>
+            </div>
+            <Link to="/#faq">
+              <Button className="bg-[#EAB308] hover:bg-[#D4A017] text-black font-black uppercase tracking-widest text-xs px-5 py-3.5 h-auto rounded-xl shrink-0 flex items-center gap-2">
+                View Full Homepage FAQs
+                <ArrowRight className="w-3.5 h-3.5" />
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 sm:py-24 relative overflow-hidden bg-gradient-to-br from-purple-600 via-pink-600 to-blue-600">
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.2)_100%)]" />
-          <div className="absolute inset-0 opacity-10" style={{
-            backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
-            backgroundSize: '40px 40px',
-          }} />
-        </div>
-
-        <div className="container mx-auto px-4 text-center relative z-10">
+      {/* Strategic CTA */}
+      <section className="py-16 sm:py-20 relative">
+        <div className="container mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
+            className="max-w-4xl mx-auto"
           >
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-black mb-6 text-white">
-              Ready to Transform Your Business?
+            <h2 className="text-4xl sm:text-6xl md:text-7xl font-black text-foreground leading-[0.9] tracking-tighter mb-4 sm:mb-6">
+              Ready To <br />
+              <span className="text-gradient-gold italic">Command?</span>
             </h2>
-            <p className="text-xl sm:text-2xl mb-8 text-white/90 max-w-2xl mx-auto">
-              Free 30-min strategy call. We'll analyze your business and show you the exact strategy to achieve your goals.
+            <p className="text-base sm:text-xl text-muted-foreground font-bold mb-8 sm:mb-10">
+              Deploy the protocol and witness the transformation.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Link to="/contact">
-                  <Button size="lg" className="bg-white text-purple-600 hover:bg-gray-100 px-8 py-6 text-base font-bold shadow-2xl">
-                    Claim Your Free Strategy Call
-                    <ArrowRight className="ml-2 w-5 h-5" />
-                  </Button>
-                </Link>
-              </motion.div>
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Link to="/portfolio">
-                  <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white/10 px-8 py-6 text-base font-bold">
-                    See Client Results
-                  </Button>
-                </Link>
-              </motion.div>
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center w-full px-4 sm:px-0">
+              <Link to="/contact" className="w-full sm:w-auto">
+                <Button className="w-full sm:w-auto h-12 sm:h-14 px-8 sm:px-12 rounded-xl sm:rounded-2xl button-premium font-black uppercase tracking-widest text-xs sm:text-sm group">
+                  Initiate Sync
+                  <ArrowRight className="ml-2.5 w-4 h-4 group-hover:translate-x-1.5 transition-transform" />
+                </Button>
+              </Link>
             </div>
-            <p className="text-white/80 text-sm mt-6">⚡ Only 3 spots left this month • 🚀 500+ businesses scaled • 💰 $50M+ revenue generated</p>
+            <p className="mt-8 text-muted-foreground font-black uppercase tracking-[0.25em] text-[10px]">
+              Limited Partner Capacity • 90-Day Result Guarantee
+            </p>
           </motion.div>
         </div>
       </section>

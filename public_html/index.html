@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+
+  <!-- ✅ Remove old Vite icon -->
+  <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
+
+  <!-- ✅ Add your favicon set -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <meta name="theme-color" content="#ffffff">
+
+  <meta name="google-site-verification" content="VKdrt46w7SeZjf4o1unAmt-lSmpgq-kBdboGJ3tmBwA" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Resource Hints & Preloads for LCP, Fonts, & Performance -->
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  </noscript>
+  <link rel="preload" href="/assets/images/logo1.webp" as="image" type="image/webp" fetchpriority="high" />
+
+  <!-- Google tag (gtag.js) -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    (function() {
+      var loaded = false;
+      function loadGtag() {
+        if (loaded) return;
+        loaded = true;
+        ['pointerdown', 'scroll', 'keydown', 'touchstart'].forEach(function(e) {
+          window.removeEventListener(e, loadGtag);
+        });
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-HVF5N1G7KC';
+        document.head.appendChild(s);
+        gtag('js', new Date());
+        gtag('config', 'G-HVF5N1G7KC');
+      }
+      ['pointerdown', 'scroll', 'keydown', 'touchstart'].forEach(function(e) {
+        window.addEventListener(e, loadGtag, { passive: true, once: true });
+      });
+      window.addEventListener('load', function() {
+        if ('requestIdleCallback' in window) {
+          requestIdleCallback(function() { setTimeout(loadGtag, 3000); });
+        } else {
+          setTimeout(loadGtag, 4000);
+        }
+      });
+    })();
+  </script>
+  <meta name="description" content="RankRise USA is a premier digital marketing agency driving business growth with AI SEO, web development, PPC ad management, and strategic online marketing." />
+  <meta name="keywords" content="affordable seo, online marketing company, online marketing agency, marketing company, marketing agency, online advertisement company, online advertisement agency, advertisement company, advertisement agency, ppc service, digital company, digital solution, ai seo agency, web development services, search engine optimization" />
+  <meta name="author" content="RankRise USA" />
+  <link rel="canonical" href="https://rankriseusa.com/" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="RankRise USA" />
+  <meta property="og:url" content="https://rankriseusa.com/" />
+  <meta property="og:title" content="RankRise USA | AI SEO &amp; Digital Marketing Agency" />
+  <meta property="og:description" content="RankRise USA is a premier digital marketing agency driving business growth with AI SEO, web development, PPC ad management, and strategic online marketing." />
+  <meta property="og:image" content="https://rankriseusa.com/assets/images/logo1.webp" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://rankriseusa.com/" />
+  <meta name="twitter:title" content="RankRise USA | AI SEO &amp; Digital Marketing Agency" />
+  <meta name="twitter:description" content="RankRise USA is a premier digital marketing agency driving business growth with AI SEO, web development, PPC ad management, and strategic online marketing." />
+  <meta name="twitter:image" content="https://rankriseusa.com/assets/images/logo1.webp" />
+
+  <!-- JSON-LD Structured Data for SEO, Organization & WebSite Search -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://rankriseusa.com/#organization",
+        "name": "RankRise USA",
+        "url": "https://rankriseusa.com/",
+        "logo": "https://rankriseusa.com/assets/images/logo1.webp",
+        "image": "https://rankriseusa.com/assets/images/logo1.webp",
+        "description": "RankRise USA is a premier digital marketing agency driving business growth with AI SEO, web development, PPC ad management, and strategic online marketing.",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "4315 50th Street NW Suite 100",
+          "addressLocality": "Washington",
+          "addressRegion": "DC",
+          "postalCode": "20016",
+          "addressCountry": "US"
+        },
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "telephone": "+1-202-888-2806",
+            "contactType": "customer service",
+            "contactOption": "TollFree",
+            "areaServed": "US",
+            "availableLanguage": ["English"]
+          },
+          {
+            "@type": "ContactPoint",
+            "telephone": "+1-202-780-0370",
+            "contactType": "sales",
+            "areaServed": "US",
+            "availableLanguage": ["English"]
+          },
+          {
+            "@type": "ContactPoint",
+            "telephone": "+1-425-943-9223",
+            "contactType": "technical support",
+            "areaServed": "US",
+            "availableLanguage": ["English"]
+          }
+        ],
+        "sameAs": [
+          "https://www.linkedin.com/in/rankrise-usa-9b86a5425/",
+          "https://x.com/rank_riseusa",
+          "https://www.instagram.com/rankrise_usa",
+          "https://www.facebook.com/profile.php?id=61592640990930#",
+          "https://www.threads.com/@rankrise_usa",
+          "https://pin.it/7FLGsDMMU",
+          "https://medium.com/@rankriseusa",
+          "https://linktr.ee/rankriseusa"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://rankriseusa.com/#website",
+        "url": "https://rankriseusa.com/",
+        "name": "RankRise USA",
+        "publisher": {
+          "@id": "https://rankriseusa.com/#organization"
+        },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://rankriseusa.com/blog?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <title>RankRise USA | AI SEO &amp; Digital Marketing Agency</title>
+  <script type="module" crossorigin src="/assets/index-CDQOxcdg.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/react-vendor-DjYUu8Sg.js">
+  <link rel="modulepreload" crossorigin href="/assets/vendor-DQNR0O-p.js">
+  <link rel="modulepreload" crossorigin href="/assets/radix-vendor-C4r1fCEt.js">
+  <link rel="modulepreload" crossorigin href="/assets/icons-CTh_Sfy_.js">
+  <link rel="modulepreload" crossorigin href="/assets/motion-B2rA5f4K.js">
+  <link rel="stylesheet" crossorigin href="/assets/index-BxqCvO7J.css">
+</head>
+
+<body>
+  <div id="root">
+    <!-- Semantic Shell for Immediate FCP & SEO Spiders (Screaming Frog / Search Crawlers) -->
+    <header style="display: flex; justify-content: space-between; align-items: center; padding: 16px 24px; background: #05070a; color: #fff;">
+      <a href="/" aria-label="RankRise USA Homepage">
+        <img src="/assets/images/logo1.webp" alt="RankRise USA Logo" width="180" height="42" />
+      </a>
+      <nav aria-label="Primary Navigation">
+        <a href="/services" style="color: #fff; margin-right: 16px; text-decoration: none;">Services</a>
+        <a href="/about" style="color: #fff; margin-right: 16px; text-decoration: none;">About</a>
+        <a href="/portfolio" style="color: #fff; margin-right: 16px; text-decoration: none;">Portfolio</a>
+        <a href="/pricing" style="color: #fff; margin-right: 16px; text-decoration: none;">Pricing</a>
+        <a href="/blog" style="color: #fff; margin-right: 16px; text-decoration: none;">Blog</a>
+        <a href="/contact" style="color: #FACC15; text-decoration: none; font-weight: 700;">Contact</a>
+      </nav>
+    </header>
+
+    <main style="min-height: 80vh; background: #05070a; color: #fff; padding: 48px 24px; text-align: center;">
+      <h1 style="font-size: 2.5rem; font-weight: 900; line-height: 1.2; margin-bottom: 24px; color: #ffffff;">
+        USA's Premier <span style="color: #FACC15;">AI SEO</span> &amp; Digital Growth Agency
+      </h1>
+      <p style="max-width: 800px; margin: 0 auto 32px; font-size: 1.125rem; color: #94a3b8; line-height: 1.6;">
+        We engineer top Google rankings, enterprise web architecture, and hyper-targeted PPC campaigns that accelerate revenue for US market leaders.
+      </p>
+
+      <section style="max-width: 1100px; margin: 40px auto; text-align: left;">
+        <h2 style="font-size: 1.75rem; font-weight: 800; margin-bottom: 20px; color: #FACC15;">Our Core Growth Solutions</h2>
+        <ul style="list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+          <li style="padding: 20px; background: #080b11; border: 1px solid rgba(255,255,255,0.1); border-radius: 12px;">
+            <h3 style="font-size: 1.25rem; margin-bottom: 8px;"><a href="/services" style="color: #fff; text-decoration: none;">AI Search Engine Optimization</a></h3>
+            <p style="color: #94a3b8; font-size: 0.95rem;">Dominating search intent with generative AI SEO protocols, technical audits, and content authority.</p>
+          </li>
+          <li style="padding: 20px; background: #080b11; border: 1px solid rgba(255,255,255,0.1); border-radius: 12px;">
+            <h3 style="font-size: 1.25rem; margin-bottom: 8px;"><a href="/services" style="color: #fff; text-decoration: none;">Enterprise Web Development</a></h3>
+            <p style="color: #94a3b8; font-size: 0.95rem;">High-performance, ultra-fast web applications built on React, TypeScript, and modern edge infrastructure.</p>
+          </li>
+          <li style="padding: 20px; background: #080b11; border: 1px solid rgba(255,255,255,0.1); border-radius: 12px;">
+            <h3 style="font-size: 1.25rem; margin-bottom: 8px;"><a href="/services" style="color: #fff; text-decoration: none;">Hyper-Targeted PPC Management</a></h3>
+            <p style="color: #94a3b8; font-size: 0.95rem;">ROI-focused Google Ads and multi-channel paid acquisition engineered for scalable pipeline growth.</p>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer style="background: #080b11; color: #94a3b8; padding: 32px 24px; text-align: center; border-top: 1px solid rgba(255,255,255,0.1);">
+      <p style="margin-bottom: 8px;">RankRise USA — 4315 50th Street NW Suite 100, Washington, DC 20016</p>
+      <p style="font-size: 0.9rem;">
+        Phone: <a href="tel:+12028882806" style="color: #FACC15;">+1 202-888-2806</a> | 
+        Email: <a href="mailto:info@rankriseusa.com" style="color: #FACC15;">info@rankriseusa.com</a>
+      </p>
+    </footer>
+  </div>
+
+  <noscript>
+    <div style="padding: 20px; text-align: center; background: #05070a; color: #fff;">
+      <h2>JavaScript Required for Interactive Experience</h2>
+      <p>Please enable JavaScript to experience the full interactive platform, or contact us at <a href="mailto:info@rankriseusa.com" style="color:#FACC15;">info@rankriseusa.com</a>.</p>
+    </div>
+  </noscript>
+
+</body>
+</html>
